@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 const items = [
@@ -30,6 +31,14 @@ const items = [
 
 const NavbarItems = ({ pathname }) => {
   return (
+    <>
+     <Image
+     src={'/logo.png'}
+     width={150}
+     height={60}
+     alt={'cowcow'}
+     className={'flex'}
+     />
     <div
       className={
         'flex flex-col cursor-pointer absolute right-0 gap-1 list-none bg-white shadow-2xl p-3 md:flex-row md:gap-4 md:static md:bg-transparent md:shadow-none'
@@ -42,7 +51,8 @@ const NavbarItems = ({ pathname }) => {
           </Link>
         </li>
       ))}
-    </div>
+    </div></>
+    
   );
 };
 

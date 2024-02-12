@@ -112,20 +112,21 @@ const HomePage = () => {
         </div>
      </div>
     </section>
-    <section className="flex justify-center items-center flex-col w-[550px]">
-        <p className="">
+    <section className={''}>
+      <div className={'flex justify-center items-center flex-col'}>
+        <p className={'w-[1000px] text-[25px]'}>
            ❝ Совхоз Южно-Сахалинский – это не только место производства, но и
             настоящая семья, где каждый член команды вносит свой вклад в общее
             благополучие. Мы приглашаем вас окунуться в атмосферу гармонии с
             природой, где труд и любовь создают уникальные продукты, способные
             радовать вас своим вкусом и полезными свойствами ❞
          </p>
-         <h3 className="">
+         <h3 className={'flex items-center text-[45px]'}>
            Добро пожаловать – в место, где забота о природе становится вкусом
            жизни!
           </h3>
-
-        <button>каталог</button>
+          <button>каталог</button>
+        </div>
     </section>
 
     </>
