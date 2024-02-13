@@ -1,5 +1,5 @@
-const AboutPage = ( ) => {
-    return 'About Page'
+const AboutPage = () => {
+  return "About Page"
 }
 
 export default AboutPage

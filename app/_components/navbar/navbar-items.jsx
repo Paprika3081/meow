@@ -1,59 +1,49 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image"
+import Link from "next/link"
 
 const items = [
   {
     id: 1,
-    title: 'ГЛАВНАЯ',
-    path: '/',
+    title: "ГЛАВНАЯ",
+    path: "/",
   },
   {
     id: 2,
-    title: 'ИСТОРИЯ',
-    path: '/history',
+    title: "ИСТОРИЯ",
+    path: "/history",
   },
   {
     id: 3,
-    title: 'КАТАЛОГ',
-    path: '/catalog',
+    title: "КАТАЛОГ",
+    path: "/catalog",
   },
   {
     id: 4,
-    title: 'КОНТАКТЫ',
-    path: '/contacts',
+    title: "КОНТАКТЫ",
+    path: "/contacts",
   },
   {
-    id: 3,
-    title: 'ДОПОЛНИТЕЛЬНО',
-    path: '/',
+    id: 5,
+    title: "ДОПОЛНИТЕЛЬНО",
+    path: "/",
   },
-];
+]
 
 const NavbarItems = ({ pathname }) => {
   return (
-    <>
-     <Image
-     src={'/logo.png'}
-     width={150}
-     height={60}
-     alt={'cowcow'}
-     className={'flex'}
-     />
-    <div
-      className={
-        'flex flex-col cursor-pointer absolute right-0 gap-1 list-none bg-white shadow-2xl p-3 md:flex-row md:gap-4 md:static md:bg-transparent md:shadow-none'
-      }
-    >
+    <div className="flex flex-row gap-4">
       {items.map((item) => (
         <li key={item.id}>
-          <Link className={`${pathname === item.path ? 'text-amber-500' : ''}`} href={item.path}>
+          <Link
+            className={`${pathname === item.path ? "text-amber-500" : ""}`}
+            href={item.path}
+          >
             {item.title}
           </Link>
         </li>
       ))}
-    </div></>
-    
-  );
-};
+    </div>
+  )
+}
 
-export { NavbarItems };
+export { NavbarItems }
