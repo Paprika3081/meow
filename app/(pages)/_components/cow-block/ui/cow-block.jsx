@@ -4,7 +4,7 @@ const CowBlock = () => {
   return (
     <section
       className={
-        "flex h-screen flex-col items-center justify-center md:flex-row"
+        "flex h-[calc(100vh-80px)] w-full flex-col items-center justify-center md:flex-row md:justify-start"
       }
     >
       <Image
@@ -12,21 +12,33 @@ const CowBlock = () => {
         width={450}
         height={450}
         alt={"cow"}
-        className={
-          "p-[10px] md:h-[400px] md:w-[400px] lg:h-[600px] lg:w-[600px]"
-        }
+        className={"object-contain md:h-1/2 md:w-1/2"}
       />
-      <div className={"flex w-[550px] flex-col"}>
+      <div
+        className={
+          "flex w-full flex-col items-center justify-center gap-3 md:w-1/2 md:gap-16"
+        }
+      >
         <h3
-          className={"weight-normal font text-left text-[35px] text-gray-400"}
+          className={
+            "weight-normal relative flex w-full flex-col text-center text-3xl text-gray-400 md:text-left md:text-[35px]"
+          }
         >
           Сделано с душой
+          <span
+            className={
+              "weight-normal text-center text-4xl  text-amber-950 md:absolute md:left-6 md:top-7 md:text-left md:text-[60px]"
+            }
+          >
+            Качественно...
+          </span>
         </h3>
-        <h1 className={"weight-normal text-left text-[60px] text-amber-950"}>
-          {" "}
-          Качественно...
-        </h1>
-        <p className={"weight-normal text-left text-[19px] text-amber-950 "}>
+
+        <p
+          className={
+            "weight-normal truncate text-pretty text-center text-sm text-amber-950 md:text-left md:text-[19px]"
+          }
+        >
           Будь то, мясомолочная продукция, овощи, выпечка, полуфабрикаты. Совхоз
           "Южно-Сахалинский" - уделяет особое внимание качеству в производстве
           всеми любимой фирменной продукции.
