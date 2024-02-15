@@ -1,0 +1,1 @@
+export { CatalogBlock } from './ui/catalog-block'
