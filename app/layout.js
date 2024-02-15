@@ -2,9 +2,9 @@ import { Comfortaa } from "next/font/google"
 
 import "./globals.css"
 
-import { Navbar } from "@/app/_components/navbar"
+import { Navbar } from "./_components/navbar"
 
-const font = Comfortaa({ subsets:  ["cyrillic", "latin"] , weight:["400"] })
+const font = Comfortaa({ subsets: ["cyrillic", "latin"], weight: ["400"] })
 
 export const metadata = {
   title: "Create Next App",
@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={font.className}>
         <Navbar />
-        <main className={"lg:container lg:m-auto"}>{children}</main>
+        <main className={"h-full w-full"}>{children}</main>
       </body>
     </html>
   )

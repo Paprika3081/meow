@@ -5,12 +5,12 @@ import { SustainableFarmBlock } from "./_components/sustainable-farm-block"
 
 const HomePage = () => {
   return (
-    <>
+    <div className="h-full flex-1">
       <CowBlock />
       <AboutBlock />
-      {/* <GridBlock /> */}
-      {/* <SustainableFarmBlock /> */}
-    </>
+      <SustainableFarmBlock />
+      <CatalogBlock />
+    </div>
   )
 }
 

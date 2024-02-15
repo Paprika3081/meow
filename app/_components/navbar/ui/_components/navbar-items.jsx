@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Link from "next/link"
 
 const items = [
@@ -31,9 +30,9 @@ const items = [
 
 const NavbarItems = ({ pathname }) => {
   return (
-    <div className="flex flex-row gap-4">
+    <>
       {items.map((item) => (
-        <li key={item.id}>
+        <li key={item.id} className={"p-2"}>
           <Link
             className={`${pathname === item.path ? "text-amber-500" : ""}`}
             href={item.path}
@@ -42,7 +41,7 @@ const NavbarItems = ({ pathname }) => {
           </Link>
         </li>
       ))}
-    </div>
+    </>
   )
 }
 

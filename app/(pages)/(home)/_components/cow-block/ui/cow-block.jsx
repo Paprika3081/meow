@@ -1,10 +1,13 @@
+import { Lobster } from "next/font/google"
 import Image from "next/image"
 
-const CowBlock = () => {
+const lobster = Lobster({ weight: ["400"], subsets: ["cyrillic", "latin"] })
+
+const CowBlock = ({ font }) => {
   return (
     <section
       className={
-        "flex h-[calc(100vh-80px)] w-full flex-col items-center justify-center md:flex-row md:justify-start"
+        "flex h-full flex-col items-center justify-center md:flex-row md:justify-start"
       }
     >
       <Image
@@ -12,7 +15,7 @@ const CowBlock = () => {
         width={450}
         height={450}
         alt={"cow"}
-        className={"object-contain md:h-1/2 md:w-1/2"}
+        className={"object-contain md:h-full md:w-1/2"}
       />
       <div
         className={
@@ -26,9 +29,7 @@ const CowBlock = () => {
         >
           Сделано с душой
           <span
-            className={
-              "weight-normal text-center text-4xl  text-amber-950 md:absolute md:left-6 md:top-7 md:text-left md:text-[60px]"
-            }
+            className={`weight-normal text-center text-4xl  text-amber-950 ${lobster.className} md:absolute md:left-6 md:top-7 md:text-left md:text-[60px]`}
           >
             Качественно...
           </span>

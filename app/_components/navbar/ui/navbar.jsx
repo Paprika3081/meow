@@ -6,7 +6,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { CiMenuBurger } from "react-icons/ci"
 
-import { NavbarItems } from "@/app/_components/navbar/navbar-items"
+import { NavbarItems } from "./_components/navbar-items"
 
 const Navbar = () => {
   const pathname = usePathname()
@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <nav
       className={
-        "relative flex h-[70px] w-full items-center justify-center bg-[#ece3d8] pl-3 pr-3 lg:container lg:m-auto"
+        "relative flex h-[80px] w-full items-center justify-center bg-[#ece3d8] pl-3 pr-3"
       }
     >
       <Link
@@ -33,12 +33,18 @@ const Navbar = () => {
           className="object-contain"
         />
       </Link>
-      <ul className={"hidden md:flex"}>
+      <ul className={"hidden md:flex md:gap-5"}>
         <NavbarItems pathname={pathname} />
       </ul>
-      <div className={"relative"}>
+      <div className={"relative flex justify-center"}>
         <CiMenuBurger onClick={handleShowMenu} className={"block md:hidden"} />
-        {showMenu && <NavbarItems pathname={pathname} />}
+        <div
+          className={
+            "absolute top-6 list-none border bg-white  text-center shadow-md"
+          }
+        >
+          {showMenu && <NavbarItems pathname={pathname} />}
+        </div>
       </div>
     </nav>
   )
