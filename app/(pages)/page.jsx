@@ -1,13 +1,16 @@
 import Image from "next/image"
-
+import {Lobster} from "next/font/google"
 import { AboutBlock } from "./_components/about-block"
 import { CowBlock } from "./_components/cow-block"
+
+const font = Lobster({weight:['400'], subsets:['cyrillic', 'latin' ]})
 
 const HomePage = () => {
   return (
     <>
-      <CowBlock />
+      <CowBlock font={font} />
       <AboutBlock />
+
       <section className="bg-stone-600">
         <div className="grid grid-cols-5 grid-rows-5 gap-4 ">
           <div className="col-start-2 row-span-2 row-start-2">

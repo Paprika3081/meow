@@ -1,10 +1,10 @@
-import { Inter } from "next/font/google"
+import { Comfortaa } from "next/font/google"
 
 import "./globals.css"
 
 import { Navbar } from "@/app/_components/navbar"
 
-const inter = Inter({ subsets: ["latin"] })
+const font = Comfortaa({ subsets:  ["cyrillic", "latin"] , weight:["400"] })
 
 export const metadata = {
   title: "Create Next App",
@@ -14,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={font.className}>
         <Navbar />
         <main className={"lg:container lg:m-auto"}>{children}</main>
       </body>

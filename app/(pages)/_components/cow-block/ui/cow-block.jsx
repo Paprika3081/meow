@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-const CowBlock = () => {
+const CowBlock = ({font}) => {
   return (
     <section
       className={
@@ -22,8 +22,7 @@ const CowBlock = () => {
         >
           Сделано с душой
         </h3>
-        <h1 className={"weight-normal text-left text-[60px] text-amber-950"}>
-          {" "}
+        <h1 className={`weight-normal text-left text-[60px] text-amber-950 ${font.className}`}>
           Качественно...
         </h1>
         <p className={"weight-normal text-left text-[19px] text-amber-950 "}>
