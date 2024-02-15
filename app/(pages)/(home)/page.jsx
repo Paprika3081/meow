@@ -5,7 +5,7 @@ import { SustainableFarmBlock } from "./_components/sustainable-farm-block"
 
 const HomePage = () => {
   return (
-    <div className="h-full flex-1">
+    <div className="h-full w-full flex-1">
       <CowBlock />
       <AboutBlock />
       <SustainableFarmBlock />
