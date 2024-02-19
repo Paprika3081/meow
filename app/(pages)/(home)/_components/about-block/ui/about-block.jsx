@@ -1,4 +1,12 @@
 import Image from "next/image"
+import { Lobster } from "next/font/google"
+import { Yeseva_One } from "next/font/google"
+
+
+
+
+const lobster = Lobster({ weight: ["400"], subsets: ["cyrillic", "latin"] })
+const Yeseva = Yeseva_One({weight: ["400"], subsets: ["cyrillic", "latin"]})
 
 const AboutBlock = () => {
   return (
@@ -7,11 +15,11 @@ const AboutBlock = () => {
         "flex w-full flex-col items-center justify-center gap-10 bg-neutral-200 p-5 md:flex-row"
       }
     >
-      <h2 className={"relative text-3xl text-white md:hidden md:text-6xl"}>
+      <h2 className={`relative text-3xl ${Yeseva.className} text-white md:hidden md:text-6xl `}>
         С любовью
         <span
           className={
-            "absolute left-2 top-4 text-5xl  font-bold text-amber-950 md:top-6 md:text-8xl"
+            `absolute left-2 top-4 text-5xl ${lobster.className} font-bold text-amber-950 md:top-6 md:text-8xl `
           }
         >
           О нас

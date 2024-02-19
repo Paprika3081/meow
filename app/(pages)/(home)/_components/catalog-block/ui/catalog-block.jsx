@@ -1,3 +1,9 @@
+import { Lobster } from "next/font/google"
+
+
+
+const lobster = Lobster({ weight: ["400"], subsets: ["cyrillic", "latin"] })
+
 const CatalogBlock = () => {
   return (
     <section
@@ -12,7 +18,7 @@ const CatalogBlock = () => {
         природой, где труд и любовь создают уникальные продукты, способные
         радовать вас своим вкусом и полезными свойствами ❞
       </p>
-      <h3 className={"flex items-center text-lg md:md:text-3xl"}>
+      <h3 className={`flex items-center text-lg md:md:text-3xl ${lobster.className}`}>
         Добро пожаловать – в место, где забота о природе становится вкусом
         жизни!
       </h3>

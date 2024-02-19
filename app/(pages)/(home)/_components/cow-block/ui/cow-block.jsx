@@ -1,7 +1,10 @@
 import { Lobster } from "next/font/google"
+import { Yeseva_One } from "next/font/google"
 import Image from "next/image"
 
 const lobster = Lobster({ weight: ["400"], subsets: ["cyrillic", "latin"] })
+const Yeseva = Yeseva_One({weight: ["400"], subsets: ["cyrillic", "latin"]})
+
 
 const CowBlock = ({ font }) => {
   return (
@@ -24,7 +27,7 @@ const CowBlock = ({ font }) => {
       >
         <h3
           className={
-            "weight-normal relative flex w-full flex-col text-center text-3xl text-gray-400 md:text-left md:text-[35px]"
+            `weight-normal relative flex w-full flex-col text-center text-3xl text-gray-400 ${Yeseva.className}  md:text-left md:text-[35px]`
           }
         >
           Сделано с душой
