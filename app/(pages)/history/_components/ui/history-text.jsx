@@ -25,7 +25,7 @@ const HistoryText = () => {
           </p>
           <div>
             <div className={"flex items-center justify-center"}>
-              <Image src="/tractor.jpg" alt="photo" width={550} height={450} />
+              <Image src="/h1.jpg" alt="photo" width={550} height={450} />
             </div>
           </div>
           <p>
@@ -66,8 +66,8 @@ const HistoryText = () => {
           </p>
           <div>
             <div className={"flex justify-center gap-11"}>
-              <Image src="/tractor.jpg" alt="photo" width={550} height={450} />
-              <Image src="/tractor.jpg" alt="photo" width={550} height={450} />
+              <Image src="/h2.jpg" alt="photo" width={550} height={450} />
+              <Image src="/h3.jpg" alt="photo" width={550} height={450} />
             </div>
           </div>
           <p>
@@ -84,8 +84,8 @@ const HistoryText = () => {
           </p>
           <div>
             <div className={"flex justify-center gap-11"}>
-              <Image src="/tractor.jpg" alt="photo" width={550} height={450} />
-              <Image src="/tractor.jpg" alt="photo" width={550} height={450} />
+              <Image src="/h4.jpg" alt="photo" width={550} height={450} />
+              <Image src="/h5.jpg" alt="photo" width={550} height={450} />
             </div>
           </div>
           <p>
@@ -106,7 +106,7 @@ const HistoryText = () => {
           </p>
           <div>
             <div className={"flex justify-center gap-11"}>
-              <Image src="/tractor.jpg" alt="photo" width={550} height={450} />
+              <Image src="/h6.jpg" alt="photo" width={550} height={450} />
               <Image src="/tractor.jpg" alt="photo" width={550} height={450} />
             </div>
           </div>
@@ -130,8 +130,7 @@ const HistoryText = () => {
             однолетние и многолетние травы для кормления поголовья.
           </p>
           <div className={"flex justify-center gap-11"}>
-            <Image src="/tractor.jpg" alt="photo" width={550} height={450} />
-            <Image src="/tractor.jpg" alt="photo" width={550} height={450} />
+            <Image src="/cow_small.jpg" alt="photo" width={550} height={450} />
           </div>
           <p>
             Южные пашни пышут разнообразием овощей: 12 сортов капусты в том
