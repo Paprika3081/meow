@@ -11,7 +11,7 @@ const lobster = Lobster({
 })
 const ContactInfo = () => {
   return (
-    <div className="flex h-full w-full flex-col items-center md:w-1/2">
+    <div className=" gap-8 flex h-full w-full flex-col items-center md:w-1/2">
       <h3
         className={`text-2xl text-gray-400 md:text-[40px] ${Yeseva.className}`}
       >
@@ -21,7 +21,7 @@ const ContactInfo = () => {
         Связаться <br /> с нами
       </h1>
 
-      <ul>
+      <ul className="flex flex-col gap-4">
         <h4 className="font-bold">Главный офис</h4>
         <h5 className="font-bold">Адрес:</h5>
         <li>
@@ -31,12 +31,10 @@ const ContactInfo = () => {
         <h5 className="font-bold">Приемная:</h5>
         <li>Тел: +7 (4242) 79-01-54</li>
         <li>Email: office@agrosakhalin.ru</li>
-      </ul>
-      <ul>
         <h5 className="font-bold">Режим работы:</h5>
         <li>Пн - Пт с 9:00 до 18:00</li>
       </ul>
-      <div>
+      <div className="flex flex-col gap-4">
         <h4 className="font-bold">Контакты</h4>
 
         <p>Генеральный директор - Богославец Наталья Леонтьевна</p>

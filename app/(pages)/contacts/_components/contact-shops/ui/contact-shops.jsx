@@ -1,6 +1,6 @@
 const ContactShops = () => {
   return (
-    <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
+    <div className="grid  grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
       <div>
         <h3 className="font-bold">Магазин</h3>
         <p>Березняки</p>
