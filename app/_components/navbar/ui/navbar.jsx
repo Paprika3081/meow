@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <nav
       className={
-        "fixed z-10 flex h-[50px] w-full items-center justify-center bg-[#ece3d8] pl-3 pr-3 shadow-sm md:h-[80px]"
+        "sticky top-0 z-10 flex h-[50px] w-full items-center justify-center bg-[#ece3d8] pl-3 pr-3 shadow-sm md:h-[80px]"
       }
     >
       <Link

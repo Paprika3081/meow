@@ -1,0 +1,1 @@
+export { ContactShops } from './ui/contact-shops'
