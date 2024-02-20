@@ -1,12 +1,10 @@
-import { Lobster } from "next/font/google"
-import { Yeseva_One } from "next/font/google"
+import { Lobster, Yeseva_One } from "next/font/google"
 import Image from "next/image"
 
 const lobster = Lobster({ weight: ["400"], subsets: ["cyrillic", "latin"] })
-const Yeseva = Yeseva_One({weight: ["400"], subsets: ["cyrillic", "latin"]})
+const Yeseva = Yeseva_One({ weight: ["400"], subsets: ["cyrillic", "latin"] })
 
-
-const CowBlock = ({ font }) => {
+const CowBlock = () => {
   return (
     <section
       className={
@@ -18,7 +16,7 @@ const CowBlock = ({ font }) => {
         width={450}
         height={450}
         alt={"cow"}
-        className={"object-contain md:h-full md:w-1/2"}
+        className={"object-contain md:h-1/2 md:w-1/2"}
       />
       <div
         className={
@@ -26,15 +24,13 @@ const CowBlock = ({ font }) => {
         }
       >
         <h3
-          className={
-            `weight-normal relative flex w-full flex-col text-center text-3xl text-gray-400 ${Yeseva.className}  md:text-left md:text-[35px]`
-          }
+          className={`weight-normal relative flex w-full flex-col text-center text-3xl text-gray-400 ${Yeseva.className}  md:text-left md:text-[35px]`}
         >
           Сделано с душой
           <span
             className={`weight-normal text-center text-4xl  text-amber-950 ${lobster.className} md:absolute md:left-6 md:top-7 md:text-left md:text-[60px]`}
           >
-            Качественно...
+            Качественно
           </span>
         </h3>
 

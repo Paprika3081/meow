@@ -2,61 +2,94 @@ import Image from "next/image"
 
 const SustainableFarmBlock = () => {
   return (
-    <section className="flex h-full w-full items-center justify-center bg-stone-600">
-      <div className="container m-auto grid h-full grid-cols-2 gap-5 p-5 md:h-[700px] md:w-[900px] md:grid-cols-3">
-        <div className="relative rounded-lg">
+    <div className="flex w-full items-center justify-center overflow-auto bg-stone-600 md:h-[85%] ">
+      <div className="container m-auto grid h-full grid-cols-2 gap-3 p-3 md:max-h-[700px] md:max-w-[900px] md:grid-cols-3">
+        <div className="relative h-[200px] w-full rounded-lg md:h-[340px]">
           <Image
+            title="Корова"
+            itemProp="image"
             src={"/cow-grid.png"}
-            alt="cow"
+            alt="Изображение с коровой"
             fill
+            sizes="300px"
             className={"absolute rounded-lg object-cover"}
           />
         </div>
-        <div className=" bg-white  relative rounded-lg flex items-center justify-center flex-col">
-         <img src="/iconka-list.png" alt="iconka" width={70} />
-          <h3 className="font-bold">Органическое земледелие</h3>
-          <p className="text-center">
-            В сердце нашего хозяйства бьется понимание важности
-                  устойчивости и заботы о природе. Мы гордимся тем, что в наших
-                  пастбищах животные пасутся на свежем воздухе, получают
-                  высококачественный корм
-          </p>
-        </div>
-        <div className="relative rounded-lg">
+        <article className="relative flex h-[200px] w-full flex-col items-center justify-center rounded-lg bg-white p-2 md:h-[340px]">
           <Image
-           src="/potato-grid.png"
-            alt="cow"
+            title="Органическое земледелие"
+            src="/iconka-list.png"
+            alt="Изображение с органическим земледелием"
+            height={70}
+            width={70}
+          />
+          <h3 className="text-center text-sm font-bold md:text-lg">
+            Органическое земледелие
+          </h3>
+          <p className="hidden text-center text-sm md:block">
+            В сердце нашего хозяйства бьется понимание важности устойчивости и
+            заботы о природе. Мы гордимся тем, что в наших пастбищах животные
+            пасутся на свежем воздухе, получают высококачественный корм
+          </p>
+        </article>
+        <div className="relative h-[200px] w-full rounded-lg md:h-[340px]">
+          <Image
+            title="Картофель"
+            itemProp="image"
+            src="/potato-grid.png"
+            alt="Изображение с картофелем"
             fill
+            sizes="300px"
             className={"absolute rounded-lg object-cover"}
           />
         </div>
-        <div className="relative rounded-lg flex items-center flex-col justify-center bg-white">
-          <img src="/iconka-cow.png" alt="iconka" width={70} />
-          <h3 className="font-bold">Животноводство</h3>
-          <p className="text-center">
-            Создаем уникальную среду для заботы о наших четвероногих
-            друзьях и обеспечения высококачественных продуктов.
-          </p>
-        </div>
-        <div className="relative rounded-lg">
+        <article className="relative flex h-[200px] w-full flex-col items-center justify-center rounded-lg bg-white p-2 md:h-[340px]">
           <Image
+            title="Животноводство"
+            itemProp="image"
+            src="/iconka-cow.png"
+            alt="Изображение с животноводством"
+            height={70}
+            width={70}
+          />
+          <h3 className="text-sm font-bold md:text-lg">Животноводство</h3>
+          <p className="hidden text-center text-sm md:block">
+            Создаем уникальную среду для заботы о наших четвероногих друзьях и
+            обеспечения высококачественных продуктов.
+          </p>
+        </article>
+        <div className="relative h-[200px] w-full rounded-lg md:h-[340px]">
+          <Image
+            title="Морковь"
+            itemProp="image"
             src="/about.png"
-            alt="cow"
+            alt="Изображение с морковью"
             fill
+            sizes="300px"
             className={"absolute rounded-lg object-cover"}
           />
         </div>
-        <div className="relative rounded-lg bg-white flex items-center flex-col justify-center">
-          <img src="/iconka-tractor.png" alt="iconka" width={70} />
-          <h3 className="font-bold">Земледелие</h3>
-          <p className="text-center">
+        <article className="relative flex h-[200px] w-full flex-col items-center justify-center rounded-lg bg-white p-2 md:h-[340px]">
+          <Image
+            title="Земледелие"
+            itemProp="image"
+            src="/iconka-tractor.png"
+            alt="Изображение с земледелием"
+            height={70}
+            width={70}
+          />
+          <h3 className="text-sm font-bold md:text-lg">Земледелие</h3>
+          <p
+            className="hidden text-center text-sm md:block
+          "
+          >
             Наша команда состоит из преданных профессионалов, способных
-            поддерживать баланс между современными технологиями и
-            традиционными методами фермерства.
+            поддерживать баланс между современными технологиями и традиционными
+            методами фермерства.
           </p>
-        </div>
+        </article>
       </div>
-    </section>
+    </div>
   )
 }
 

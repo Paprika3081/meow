@@ -1,12 +1,8 @@
+import { Lobster, Yeseva_One } from "next/font/google"
 import Image from "next/image"
-import { Lobster } from "next/font/google"
-import { Yeseva_One } from "next/font/google"
-
-
-
 
 const lobster = Lobster({ weight: ["400"], subsets: ["cyrillic", "latin"] })
-const Yeseva = Yeseva_One({weight: ["400"], subsets: ["cyrillic", "latin"]})
+const Yeseva = Yeseva_One({ weight: ["400"], subsets: ["cyrillic", "latin"] })
 
 const AboutBlock = () => {
   return (
@@ -15,12 +11,12 @@ const AboutBlock = () => {
         "flex w-full flex-col items-center justify-center gap-10 bg-neutral-200 p-5 md:flex-row"
       }
     >
-      <h2 className={`relative text-3xl ${Yeseva.className} text-white md:hidden md:text-6xl `}>
+      <h2
+        className={`relative text-3xl ${Yeseva.className} text-white md:hidden md:text-6xl `}
+      >
         С любовью
         <span
-          className={
-            `absolute left-2 top-4 text-5xl ${lobster.className} font-bold text-amber-950 md:top-6 md:text-8xl `
-          }
+          className={`absolute left-2 top-4 text-5xl ${lobster.className} font-bold text-amber-950 md:top-6 md:text-8xl `}
         >
           О нас
         </span>
@@ -32,7 +28,7 @@ const AboutBlock = () => {
           height={610}
           alt={"cow"}
           className={
-            "h-[300px] w-[300px] rounded-full md:h-1/2 md:w-1/2 md:rounded-3xl"
+            "h-[300px] w-[300px] rounded-full md:h-full md:w-full md:rounded-3xl lg:h-1/2 lg:w-1/2"
           }
         />
       </div>
@@ -55,7 +51,7 @@ const AboutBlock = () => {
           </span>
         </h2>
 
-        <p className={"text-justify md:w-1/2"}>
+        <p className={"md:max-w-1/2 text-justify"}>
           Совхоз Южно-Сахалинский – великолепное место, где сливаются
           трудолюбие, опыт и любовь к земле в единое творческое стремление. Мы
           представляем собой крупное агропромышленное хозяйство. На фермах
