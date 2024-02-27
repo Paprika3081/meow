@@ -2,9 +2,9 @@ import Image from "next/image"
 
 const SustainableFarmBlock = () => {
   return (
-    <div className="flex w-full items-center justify-center overflow-auto bg-stone-600 md:h-[85%] ">
-      <div className="container m-auto grid h-full grid-cols-2 gap-3 p-3 md:max-h-[700px] md:max-w-[900px] md:grid-cols-3">
-        <div className="relative h-[200px] w-full rounded-lg md:h-[340px]">
+    <div className="flex w-full items-center justify-center bg-stone-600 md:h-[85%]">
+      <div className="container mx-auto grid grid-cols-2 md:grid-cols-3 gap-3 p-3 md:max-h-[700px] md:max-w-[900px]">
+        <div className="relative rounded-lg">
           <Image
             title="Корова"
             itemProp="image"
@@ -15,7 +15,7 @@ const SustainableFarmBlock = () => {
             className={"absolute rounded-lg object-cover"}
           />
         </div>
-        <article className="relative flex h-[200px] w-full flex-col items-center justify-center rounded-lg bg-white p-2 md:h-[340px]">
+        <article className="relative flex flex-col items-center justify-center rounded-lg bg-white p-2 md:h-[340px]">
           <Image
             title="Органическое земледелие"
             src="/iconka-list.png"
@@ -32,7 +32,7 @@ const SustainableFarmBlock = () => {
             пасутся на свежем воздухе, получают высококачественный корм
           </p>
         </article>
-        <div className="relative h-[200px] w-full rounded-lg md:h-[340px]">
+        <div className="relative rounded-lg">
           <Image
             title="Картофель"
             itemProp="image"
@@ -43,7 +43,7 @@ const SustainableFarmBlock = () => {
             className={"absolute rounded-lg object-cover"}
           />
         </div>
-        <article className="relative flex h-[200px] w-full flex-col items-center justify-center rounded-lg bg-white p-2 md:h-[340px]">
+        <article className="relative flex flex-col items-center justify-center rounded-lg bg-white p-2">
           <Image
             title="Животноводство"
             itemProp="image"
@@ -58,7 +58,7 @@ const SustainableFarmBlock = () => {
             обеспечения высококачественных продуктов.
           </p>
         </article>
-        <div className="relative h-[200px] w-full rounded-lg md:h-[340px]">
+        <div className="relative rounded-lg">
           <Image
             title="Морковь"
             itemProp="image"
@@ -69,7 +69,7 @@ const SustainableFarmBlock = () => {
             className={"absolute rounded-lg object-cover"}
           />
         </div>
-        <article className="relative flex h-[200px] w-full flex-col items-center justify-center rounded-lg bg-white p-2 md:h-[340px]">
+        <article className="relative flex flex-col items-center justify-center rounded-lg bg-white p-2">
           <Image
             title="Земледелие"
             itemProp="image"
