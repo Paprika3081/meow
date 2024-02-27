@@ -2,6 +2,7 @@
 
 import { ContactImages } from "./_components/contact-images"
 import { ContactInfo } from "./_components/contact-info"
+import { ContactMap } from "./_components/contact-map"
 import { ContactShops } from "./_components/contact-shops"
 
 const ContactsPage = () => {
@@ -11,6 +12,7 @@ const ContactsPage = () => {
         <ContactInfo />
         <ContactImages />
       </div>
+      <ContactMap/>
       <ContactShops />
     </div>
   )
