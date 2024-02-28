@@ -1,11 +1,12 @@
 "use client"
 
-import { NavbarItems } from './_components/navbar-items'
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { CiMenuBurger } from "react-icons/ci"
+
+import { NavbarItems } from "./_components/navbar-items"
 
 const Navbar = () => {
   const pathname = usePathname()

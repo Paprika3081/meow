@@ -8,7 +8,7 @@ const AboutBlock = () => {
   return (
     <section
       className={
-        "flex w-full flex-col items-center justify-center gap-10 bg-neutral-200 p-5 md:flex-row"
+        "flex  w-full flex-col items-center justify-center gap-10 bg-[#ECE3D8] p-5 md:flex-row lg:h-[85%]"
       }
     >
       <h2

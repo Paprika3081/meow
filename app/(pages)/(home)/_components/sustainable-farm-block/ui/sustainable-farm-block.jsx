@@ -3,7 +3,7 @@ import Image from "next/image"
 const SustainableFarmBlock = () => {
   return (
     <div className="flex w-full items-center justify-center bg-stone-600 md:h-full">
-      <div className="container mx-auto grid grid-cols-2 md:grid-cols-3 gap-3 p-3 md:max-h-[700px] md:max-w-[900px]">
+      <div className="container mx-auto grid grid-cols-2 grid-rows-2 gap-3 md:max-h-[700px] md:max-w-[900px] md:grid-cols-3">
         <div className="relative rounded-lg">
           <Image
             title="Корова"

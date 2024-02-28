@@ -1,3 +1,5 @@
+"use client"
+
 import { Lobster } from "next/font/google"
 
 const lobster = Lobster({ weight: ["400"], subsets: ["cyrillic", "latin"] })
@@ -24,7 +26,7 @@ const CatalogBlock = () => {
       </h3>
       <button
         className={
-          "rounded-md bg-orange-300 p-2 duration-150 hover:bg-orange-400 hover:text-white hover:shadow-md hover:transition-all md:px-14 md:py-5"
+          "rounded-md bg-[#57534E] p-2 text-lg text-white duration-150 hover:bg-[#ECE3D8] hover:text-black hover:shadow-md hover:transition-all md:px-14 md:py-5"
         }
       >
         каталог

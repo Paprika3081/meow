@@ -1,28 +1,27 @@
-'use client'
+"use client"
 
-import Link from "next/link"
-import React, { useState} from 'react';
+import React, { useState } from "react"
 
 const items = [
   {
     id: 1,
     title: "ГЛАВНАЯ",
-    path: "/"
+    path: "/",
   },
   {
     id: 2,
     title: "ИСТОРИЯ",
-    path: "/history"
+    path: "/history",
   },
   {
     id: 3,
     title: "КАТАЛОГ",
-    path: "/catalog"
+    path: "/catalog",
   },
   {
     id: 4,
     title: "КОНТАКТЫ",
-    path: "/contacts"
+    path: "/contacts",
   },
   {
     id: 5,
@@ -32,41 +31,50 @@ const items = [
       {
         id: 6,
         title: "ДОКУМЕНТЫ",
-        path: "/documents"
+        path: "/documents",
       },
       {
         id: 7,
         title: "ЗАКАЗЧИКАМ",
-        path: "/customers"
-      }
-    ]
-  }
-];
+        path: "/customers",
+      },
+    ],
+  },
+]
 
 const NavbarItems = ({ pathname }) => {
-  const [showSubMenu, setShowSubMenu] = useState(false);
+  const [showSubMenu, setShowSubMenu] = useState(false)
 
   const handleMouseEnter = () => {
-    setShowSubMenu(true);
-  };
+    setShowSubMenu(true)
+  }
 
   const handleMouseLeave = () => {
-    setShowSubMenu(false);
-  };
+    setShowSubMenu(false)
+  }
 
   return (
-    <ul className="flex relative">
+    <ul className="relative flex">
       {items.map((item) => (
-        <li key={item.id} className="p-2" onMouseEnter={item.title === "ДОПОЛНИТЕЛЬНО" ? handleMouseEnter : null} onMouseLeave={item.title === "ДОПОЛНИТЕЛЬНО" ? handleMouseLeave : null}>
+        <li
+          key={item.id}
+          className="p-2"
+          onMouseEnter={
+            item.title === "ДОПОЛНИТЕЛЬНО" ? handleMouseEnter : null
+          }
+          onMouseLeave={
+            item.title === "ДОПОЛНИТЕЛЬНО" ? handleMouseLeave : null
+          }
+        >
           {item.subItems && item.title === "ДОПОЛНИТЕЛЬНО" ? (
             <>
               <span>{item.title}</span>
               {showSubMenu && (
-                <ul className="absolute left-200 mt-2 bg-white shadow-md">
+                <ul className="absolute right-0 mt-2 bg-white shadow-md">
                   {item.subItems.map((subItem) => (
                     <li key={subItem.id} className="p-2">
                       <a
-                        className={`${pathname === subItem.path ? "text-amber-500" : "z-10"}`}
+                        className={`${pathname === subItem.path ? "border-b-2 border-[#57534E] text-gray-500" : "z-10"}`}
                         href={subItem.path}
                       >
                         {subItem.title}
@@ -78,7 +86,7 @@ const NavbarItems = ({ pathname }) => {
             </>
           ) : (
             <a
-              className={`${pathname === item.path ? "text-amber-500 " : ""}`}
+              className={`${pathname === item.path ? "border-b-2 border-[#57534E] text-gray-500" : ""}`}
               href={item.path}
             >
               {item.title}
@@ -87,7 +95,7 @@ const NavbarItems = ({ pathname }) => {
         </li>
       ))}
     </ul>
-  );
-};
+  )
+}
 
-export  { NavbarItems };
+export { NavbarItems }
