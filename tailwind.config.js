@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'fonfon' : "url('./public/background-lavr.png')"
+
       },
     },
   },
