@@ -13,7 +13,7 @@ const ProductCatalog = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const response = await fetch(`https://7fcf0181b78e5f1b.mokky.dev/products?page=1&limit=9`)
+      const response = await fetch(`https://a4ddb814deba66b5.mokky.dev/products?page=1&limit=9`)
       const data = await response.json()
       setProducts(data)
     }
@@ -26,7 +26,7 @@ const ProductCatalog = () => {
     setPage(nextPage); 
   
     const fetchMore = async () => {
-      const response = await fetch(`https://7fcf0181b78e5f1b.mokky.dev/products?page=${nextPage}&limit=9`);
+      const response = await fetch(`https://a4ddb814deba66b5.mokky.dev/products?page=${nextPage}&limit=9`);
       const data = await response.json();
       setFetchedData(prevData => [...prevData, ...data.items]);
     };
