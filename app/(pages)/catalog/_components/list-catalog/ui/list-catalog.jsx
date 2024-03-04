@@ -1,132 +1,63 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Product } from '../../product';
+import { Button } from '@/app/_components/button/ui/button';
 
 const ProductCatalog = () => {
-  const [showModal, setShowModal] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState(null);
   const [sortOption, setSortOption] = useState('default');
   const [filterOption, setFilterOption] = useState('all');
-
-  const products = [
-    { 
-      id: 1, 
-      name: 'Молоко 2,5%  1 л.', 
-      category: 'Молочная продукция',
-      price: 0, 
-      description: 'Молоко "Российское" с массовой долей жира : 2,5% /1 л.',
-      image: './moloko-2.5.png', 
-      sku: '113' 
-    },
-    { 
-      id: 2, 
-      name: 'Молоко  3,2%  1 л.', 
-      category: 'Молочная продукция',
-      price: 0, 
-      description: 'Молоко "Российское" питьевое с массовой долей жира : 3,2% /1 л.',
-      image: './moloko-3.2.png', 
-      sku: '114' 
-    },
-    { 
-      id: 3, 
-      name: 'Молоко 3,2%  0.5 л.', 
-      category: 'Молочная продукция',
-      price: 0, 
-      description: 'Молоко "Российское" 3,2% /0,5 л.',
-      image: './moloko-small-3.2.png', 
-      sku: '131' 
-    },
-    { 
-      id: 4, 
-      name: 'Молоко 2,5% 0.5 л.', 
-      category: 'Молочная продукция',
-      price: 0, 
-      description: 'Молоко "Российское" 2,5% 0,5 л.',
-      image: './moloko-small-2.5.png', 
-      sku: '132' 
-    },
-    { 
-      id: 5, 
-      name: 'Молоко "Цельное отборное" 4,5-6,0%  0,5 л.', 
-      category: 'Молочная продукция',
-      price: 0, 
-      description: 'Молоко "Цельное отборное" 4,5-6,0%  0,5 л.',
-      image: './moloko-cell.png', 
-      sku: '140' 
-    },
-    { 
-      id: 6, 
-      name: 'Сыворотка 1 л.', 
-      category: 'Молочная продукция',
-      price: 0, 
-      description: 'Сыворотка 1 л.',
-      image: './noname.jpg', 
-      sku: '000000483' 
-    },
-    { 
-      id: 7, 
-      name: 'Йогурт вишня 3,2% 0,4 кг.', 
-      category: 'Молочная продукция',
-      price: 0, 
-      description: 'Йогурт вишня 3,2% 0,4 кг.',
-      image: './noname.jpg', 
-      sku: '133' 
-    },
-    { 
-      id: 8, 
-      name: 'Йогурт «Отруби-злаки» 3,2% 0,4 кг.', 
-      category: 'Молочная продукция',
-      price: 0, 
-      description: 'Йогурт «Отруби-злаки» 3,2% 0,4 кг.',
-      image: './noname.jpg', 
-      sku: '101' 
-    },
-    { 
-      id: 9, 
-      name: 'Йогурт черника 3,2% 0,4 кг.', 
-      category: 'Молочная продукция',
-      price: 0, 
-      description: 'Йогурт черника 3,2% 0,4 кг.',
-      image: './noname.jpg', 
-      sku: '103' 
-    },
+  const [fetchedData, setFetchedData] = useState([])
+  const [page, setPage] = useState(1)
 
 
+  const [products, setProducts] = useState([])
 
-
-
-    // Добавьте остальные товары здесь
-  ];
-
-  // Функция для сортировки и фильтрации товаров
-  const filterAndSortProducts = (option) => {
-    let filteredProducts = [...products];
-    
-    if (filterOption !== 'all') {
-      filteredProducts = filteredProducts.filter(product => product.category === filterOption);
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const response = await fetch(`https://7fcf0181b78e5f1b.mokky.dev/products?page=1&limit=9`)
+      const data = await response.json()
+      setProducts(data)
     }
 
-    if (option === 'sku') {
-      return filteredProducts.sort((a, b) => a.sku.localeCompare(b.sku));
-    } else if (option === 'priceLowToHigh') {
-      return filteredProducts.sort((a, b) => a.price - b.price);
-    } else if (option === 'priceHighToLow') {
-      return filteredProducts.sort((a, b) => b.price - a.price);
+    fetchProducts()
+  }, [page])
+
+  const loadMore = () => {
+    const nextPage = page + 1;
+    setPage(nextPage); 
+  
+    const fetchMore = async () => {
+      const response = await fetch(`https://7fcf0181b78e5f1b.mokky.dev/products?page=${nextPage}&limit=9`);
+      const data = await response.json();
+      setFetchedData(prevData => [...prevData, ...data.items]);
+    };
+  
+    fetchMore();
+  };
+
+ 
+  // Функция для сортировки и фильтрации товаров
+  const filterAndSortProducts = (option) => {
+    let filteredProducts = products.items;
+
+    if (filterOption !== 'all') {
+      filteredProducts = filteredProducts && filteredProducts.filter(product => product.category === filterOption);
+      return filteredProducts
+    }
+
+    if (option === 'priceLowToHigh') {
+      filteredProducts = filteredProducts && filteredProducts.sort((a, b) => a.price - b.price);
+      return filteredProducts
+    } 
+     else if (option === 'priceHighToLow') {
+      filteredProducts = filteredProducts && filteredProducts.sort((a, b) => b.price - a.price);
+      return filteredProducts
     } else {
       return filteredProducts;
     }
   };
 
-  const handleOpenModal = (product) => {
-    setSelectedProduct(product);
-    setShowModal(true);
-  };
-
-  const handleCloseModal = () => {
-    setSelectedProduct(null);
-    setShowModal(false);
-  };
-
   return (
-    <div>
+    <div className='container m-auto'>
       {/* Баннер специальных предложений */}
       <div className="bg-yellow-300 p-4 mb-4 lg:col-span-3">
         <h2 className="text-xl font-bold">Специальные предложения</h2>
@@ -159,47 +90,22 @@ const ProductCatalog = () => {
           onChange={(e) => setSortOption(e.target.value)}
         >
           <option value="default">По умолчанию</option>
-          <option value="sku">Артикулу</option>
           <option value="priceLowToHigh">Цене (по возрастанию)</option>
           <option value="priceHighToLow">Цене (по убыванию)</option>
         </select>
       </div>
 
       {/* Грид с товарами */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {filterAndSortProducts(sortOption).map((product) => (
-          <div key={product.id} className="border p-4">
-            <img src={product.image} alt={product.name} className="mb-2 mx-auto" style={{ maxWidth: '100%' }} />
-            <h3 className="text-xl font-bold text-center">{product.name}</h3>
-            <p className="text-gray-700 text-center">Цена: {product.price} руб.</p>
-            <p className="text-gray-700 text-center">Артикул: {product.sku}</p>
-            <button
-              onClick={() => handleOpenModal(product)}
-              className="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded block mx-auto"
-            >
-              Подробнее
-            </button>
-          </div>
+      <div className="grid grid-rows-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {products.items && filterAndSortProducts(sortOption).map((product) => (
+          <Product id={product.id} name={product.name} image={product.image} price={product.price} description={product.description} discount={product?.discount}/> 
+        ))}
+        {products.items && fetchedData.map((product) => (
+          <Product id={product.id} name={product.name} image={product.image} price={product.price} description={product.description} discount={product?.discount}/> 
         ))}
       </div>
-      
-      {/* Модальное окно */}
-      {showModal && (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
-          <div className="bg-white p-8 rounded-lg">
-            <h2 className="text-2xl font-bold">{selectedProduct.name}</h2>
-            <p className="text-gray-700">Цена: {selectedProduct.price} руб.</p>
-            <p className="text-gray-700">Артикул: {selectedProduct.sku}</p>
-            <p className="text-gray-700">{selectedProduct.description}</p>
-            <button
-              onClick={handleCloseModal}
-              className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded block mx-auto"
-            >
-              Закрыть
-            </button>
-          </div>
-        </div>
-      )}
+
+      {page !== products?.meta?.total_pages ? <Button onClick={loadMore}>Загрузить еще (Всего товаров: {products.meta && products.meta.total_items})</Button> : ''}
     </div>
   );
 };
