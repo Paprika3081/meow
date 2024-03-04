@@ -31,7 +31,7 @@ const ProductCatalog = () => {
       category: 'Молочная продукция',
       price: 0, 
       description: 'Молоко "Российское" 3,2% /0,5 л.',
-      image: './moloko-2.5.png', 
+      image: './moloko-small-3.2.png', 
       sku: '131' 
     },
     { 
@@ -40,7 +40,7 @@ const ProductCatalog = () => {
       category: 'Молочная продукция',
       price: 0, 
       description: 'Молоко "Российское" 2,5% 0,5 л.',
-      image: './noname.jpg', 
+      image: './moloko-small-2.5.png', 
       sku: '132' 
     },
     { 
@@ -49,7 +49,7 @@ const ProductCatalog = () => {
       category: 'Молочная продукция',
       price: 0, 
       description: 'Молоко "Цельное отборное" 4,5-6,0%  0,5 л.',
-      image: './noname.jpg', 
+      image: './moloko-cell.png', 
       sku: '140' 
     },
     { 
@@ -68,26 +68,26 @@ const ProductCatalog = () => {
       price: 0, 
       description: 'Йогурт вишня 3,2% 0,4 кг.',
       image: './noname.jpg', 
-      sku: 'SKU789' 
+      sku: '133' 
     },
-    // { 
-    //   id: 8, 
-    //   name: 'Молоко', 
-    //   category: 'Молочная продукция',
-    //   price: 0, 
-    //   description: 'Молоко "Российское" 3,2% /0,5 л.',
-    //   image: './moloko-2.5.png', 
-    //   sku: '' 
-    // },
-    // { 
-    //   id: 9, 
-    //   name: '', 
-    //   category: '',
-    //   price: 0, 
-    //   description: '',
-    //   image: './moloko-2.5.png', 
-    //   sku: '' 
-    // },
+    { 
+      id: 8, 
+      name: 'Йогурт «Отруби-злаки» 3,2% 0,4 кг.', 
+      category: 'Молочная продукция',
+      price: 0, 
+      description: 'Йогурт «Отруби-злаки» 3,2% 0,4 кг.',
+      image: './noname.jpg', 
+      sku: '101' 
+    },
+    { 
+      id: 9, 
+      name: 'Йогурт черника 3,2% 0,4 кг.', 
+      category: 'Молочная продукция',
+      price: 0, 
+      description: 'Йогурт черника 3,2% 0,4 кг.',
+      image: './noname.jpg', 
+      sku: '103' 
+    },
 
 
 
