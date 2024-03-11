@@ -7,19 +7,27 @@ const ProductCatalog = () => {
   const [filterOption, setFilterOption] = useState('all');
   const [fetchedData, setFetchedData] = useState([])
   const [page, setPage] = useState(1)
-
-
   const [products, setProducts] = useState([])
+  const [filteredProducts, setFilteredProducts] = useState([])
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      const response = await fetch(`https://a4ddb814deba66b5.mokky.dev/products?page=1&limit=9`)
-      const data = await response.json()
-      setProducts(data)
+    if (filterOption !== 'all') {
+     const filterProducts = async () => {
+       const response = await fetch(`https://a4ddb814deba66b5.mokky.dev/products?category=${filterOption}`)
+       const data = await response.json()
+       setFilteredProducts(data)
+     }
+     filterProducts()
+    } else {
+     const fetchProducts = async () => {
+       const response = await fetch(`https://a4ddb814deba66b5.mokky.dev/products?page=1&limit=9`)
+       const data = await response.json()
+       setProducts(data)
+     }
+ 
+     fetchProducts()
     }
-
-    fetchProducts()
-  }, [page])
+   }, [filterOption,page])
 
   const loadMore = () => {
     const nextPage = page + 1;
@@ -35,26 +43,6 @@ const ProductCatalog = () => {
   };
 
  
-  // Функция для сортировки и фильтрации товаров
-  const filterAndSortProducts = (option) => {
-    let filteredProducts = products.items;
-
-    if (filterOption !== 'all') {
-      filteredProducts = filteredProducts && filteredProducts.filter(product => product.category === filterOption);
-      return filteredProducts
-    }
-
-    if (option === 'priceLowToHigh') {
-      filteredProducts = filteredProducts && filteredProducts.sort((a, b) => a.price - b.price);
-      return filteredProducts
-    } 
-     else if (option === 'priceHighToLow') {
-      filteredProducts = filteredProducts && filteredProducts.sort((a, b) => b.price - a.price);
-      return filteredProducts
-    } else {
-      return filteredProducts;
-    }
-  };
 
   return (
     <div className='container m-auto'>
@@ -97,15 +85,17 @@ const ProductCatalog = () => {
 
       {/* Грид с товарами */}
       <div className="grid grid-rows-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {products.items && filterAndSortProducts(sortOption).map((product) => (
+ 
+        {filterOption !== 'all' ? filteredProducts && filteredProducts.map((product) => (
+          <Product id={product.id} name={product.name} image={product.image} price={product.price} description={product.description} discount={product?.discount}/> 
+        )) : products.items && products.items.map((product) => (
           <Product id={product.id} name={product.name} image={product.image} price={product.price} description={product.description} discount={product?.discount}/> 
         ))}
-        {products.items && fetchedData.map((product) => (
+        {filterOption === 'all' && products.items && fetchedData.map((product) => (
           <Product id={product.id} name={product.name} image={product.image} price={product.price} description={product.description} discount={product?.discount}/> 
         ))}
+        {filterOption === 'all' && page !== products?.meta?.total_pages ?<Button onClick={loadMore}>Загрузить еще (Всего товаров: {products.meta && products.meta.total_items})</Button> : ''}
       </div>
-
-      {page !== products?.meta?.total_pages ? <Button onClick={loadMore}>Загрузить еще (Всего товаров: {products.meta && products.meta.total_items})</Button> : ''}
     </div>
   );
 };
