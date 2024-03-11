@@ -8,13 +8,13 @@ const CowBlock = () => {
   return (
     <section
       className={
-        "flex h-full flex-col items-center justify-center md:flex-row md:justify-start"
+        "flex  h-full flex-col items-center justify-center md:flex-row md:justify-start"
       }
     >
       <Image
         src={"/cow.png"}
-        width={450}
-        height={450}
+        width={1200}
+        height={1200}
         alt={"cow"}
         className={"object-contain md:h-1/2 md:w-1/2"}
       />
@@ -34,14 +34,10 @@ const CowBlock = () => {
           </span>
         </h3>
 
-        <p
-          className={
-            "weight-normal truncate text-pretty text-center text-sm text-amber-950 md:text-left md:text-[19px]"
-          }
-        >
-          Будь то, мясомолочная продукция, овощи, выпечка, полуфабрикаты. Совхоз
-          "Южно-Сахалинский" - уделяет особое внимание качеству в производстве
-          всеми любимой фирменной продукции.
+        <p className=" weight-normal truncate text-pretty text-center text-sm text-amber-950 md:text-left md:text-[19px]">
+            Будь то, мясомолочная продукция, овощи, выпечка, полуфабрикаты. Совхоз
+            "Южно-Сахалинский" - уделяет особое внимание качеству в производстве
+            всеми любимой фирменной продукции.
         </p>
       </div>
     </section>
