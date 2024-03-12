@@ -15,7 +15,7 @@ const CowBlock = () => {
         className="object-contain md:w-1/2"
       />
       <div className="flex flex-col items-center justify-center gap-3 w-full md:w-1/2 md:gap-16">
-        <h3 className={`weight-normal text-center text-3xl text-gray-400 md:text-left md:text-4xl  ${Yeseva.className}`}>
+        <h3 className={`flex flex-col weight-normal text-center text-3xl text-gray-400 md:text-left md:text-4xl  ${Yeseva.className}`}>
           Сделано с душой
           <span className={`weight-normal block text-center text-4xl text-amber-950 md:inline-block md:text-[60px] ${lobster.className}`}>
             Качественно
