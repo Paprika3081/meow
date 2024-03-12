@@ -8,15 +8,15 @@ const AboutBlock = () => {
   return (
     <section
       className={
-        "flex  w-full flex-col items-center justify-center gap-10 bg-[#ECE3D8] p-5 md:flex-row lg:h-[85%]"
+        "flex  w-full  flex-col items-center justify-center gap-10 bg-[#ECE3D8] p-5 md:flex-row lg:h-[85%]"
       }
     >
       <h2
-        className={`relative text-3xl ${Yeseva.className} text-white md:hidden md:text-6xl `}
+        className={`relative text-3xl  text-white md:hidden md:text-6xl ${Yeseva.className}`}
       >
         С любовью
         <span
-          className={`absolute left-2 top-4 text-5xl ${lobster.className} font-bold text-amber-950 md:top-6 md:text-8xl `}
+          className={`absolute left-2 top-4 text-5xl  font-bold text-amber-950 md:top-6 md:text-8xl ${lobster.className}`}
         >
           О нас
         </span>
@@ -39,7 +39,7 @@ const AboutBlock = () => {
         }
       >
         <h2
-          className={"relative hidden text-3xl text-white md:block md:text-6xl"}
+          className={"relative hidden text-3xl text-white md:block md:text-7xl"}
         >
           С любовью
           <span

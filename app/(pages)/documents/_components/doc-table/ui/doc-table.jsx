@@ -1,21 +1,20 @@
-
-
+import { Lobster, Yeseva_One } from "next/font/google"
 
 import React from 'react';
+
+const lobster = Lobster({ weight: ["400"], subsets: ["cyrillic", "latin"] })
+const Yeseva = Yeseva_One({ weight: ["400"], subsets: ["cyrillic", "latin"] })
+
 
 const DocTable = () => {
   return (
     <div className="container mx-auto px-4 py-8 md:px-8 lg:px-16">
       <div className="mb-8">
-        <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-gray-800">Документы</h3>
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">О качестве продукции</h1>
+        <h3 className={`text-lg md:text-xl lg:text-2xl font-semibold  text-gray-400 ${Yeseva.className}`}>Декларации соответствия</h3>
       </div>
       <div className="overflow-x-auto">
         <table className="min-w-full">
           <thead>
-            <tr className="bg--200">
-              <th className="px-4 py-2">Декларации соответствия</th>
-            </tr>
             <tr className="bg-gray-100">
               <th className="px-4 py-2">Продукция</th>
               <th className="px-4 py-2">Регистрационный номер</th>
