@@ -9,6 +9,7 @@ const lobster = Lobster({
   weight: ["400"],
   subsets: ["cyrillic", "latin"],
 })
+
 const ContactInfo = () => {
   return (
     <div className=" gap-8 flex h-full w-full flex-col items-center md:w-1/2">
@@ -40,27 +41,27 @@ const ContactInfo = () => {
         <p>Генеральный директор - Богославец Наталья Леонтьевна</p>
         <p>
           Отдел реализации -
-          <a href="paprikaa666@gmail.com"> paprikaa666@gmail.com</a>
+          <a href="mailto:realization@agrosakhalin.ru" className="hover:text-blue-500"> realization@agrosakhalin.ru</a>
         </p>
         <p>
-          Секретарь -<a href="paprikaa666@gmail.com"> office@agrosakhalin.ru</a>
+          Секретарь -<a href="mailto:office@agrosakhalin.ru" className="hover:text-blue-500"> office@agrosakhalin.ru</a>
         </p>
         <p>
-          Юридический отдел - Стёпин Владимир Евгеньевич
-          <a href="paprikaa666@gmail.com"> stepin.v@agrosakhalin.ru</a>
+          Юридический отдел - 
+          <a href="mailto:jurist@agrosakhalin.ru" className="hover:text-blue-500"> jurist@agrosakhalin.ru</a>
         </p>
         <p>
           Отдел бухгалтерия -
-          <a href="paprikaa666@gmail.com"> paprikaa666@gmail.com</a>
+          <a href="mailto:accounting@agrosakhalin.ru" className="hover:text-blue-500"> accounting@agrosakhalin.ru</a>
         </p>
         <p>
           Отдел информационных технологий -
-          <a href="paprikaa666@gmail.com"> admin@agrosakhalin.ru</a>
+          <a href="mailto:admin@agrosakhalin.ru" className="hover:text-blue-500"> admin@agrosakhalin.ru</a>
         </p>
         <p>
-          Отдел кадров -<a href="paprikaa666@gmail.com"> ok@agrosakhalin.ru</a>
+          Отдел кадров -<a href="mailto:ok@agrosakhalin.ru" className="hover:text-blue-500"> ok@agrosakhalin.ru</a>
         </p>
-        <p>Хотите работать у нас? Нажмите сюда hh.ru</p>
+        <p>Хотите работать у нас? <a href="https://yuzhno-sakhalinsk.hh.ru/employer/5844507" className="hover:text-blue-500">Нажмите сюда hh.ru</a></p>
       </div>
     </div>
   )
