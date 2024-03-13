@@ -15,7 +15,7 @@ const DocTable = () => {
       <div className="overflow-x-auto">
         <table className="min-w-full">
           <thead>
-            <tr className="bg-gray-100">
+            <tr className="bg-[#fbefe1]">
               <th className="px-4 py-2">Продукция</th>
               <th className="px-4 py-2">Регистрационный номер</th>
               <th className="px-4 py-2">Дата регистрации</th>
@@ -24,46 +24,46 @@ const DocTable = () => {
             </tr>
           </thead>
           <tbody>
-            <tr className="bg-gray-100">
+            <tr className=" bg-[#fbefe1]">
               <td className="px-4 py-2">Капуста белокочанная</td>
               <td className="px-4 py-2">ЕАЭС N RU Д-RU.РА09.В.61444/23</td>
               <td className="px-4 py-2">13.11.2023 г</td>
               <td className="px-4 py-2">31.07.24 г</td>
               <td className="px-4 py-2">
-                <a href="White_cabbage.pdf" download className="text-blue-500 hover:text-blue-700">
+                <a href="White_cabbage.pdf" download className="text-black hover:text-red-700">
                   Скачать PDF
                 </a>
               </td>
             </tr>
-             <tr className="bg-gray-100">
+             <tr className="bg-[#fbefe1]">
               <td className="px-4 py-2">Картофель</td>
               <td className="px-4 py-2">ЕАЭС N RU Д-RU.РА09.В.61444/23</td>
               <td className="px-4 py-2">13.11.2023 г</td>
               <td className="px-4 py-2">31.07.24 г</td>
               <td className="px-4 py-2">
-                <a href="White_cabbage.pdf" download className="text-blue-500 hover:text-blue-700">
+                <a href="White_cabbage.pdf" download className="text-black hover:text-red-700">
                   Скачать PDF
                 </a>
               </td>
             </tr>
-             <tr className="bg-gray-100">
+             <tr className=" bg-[#fbefe1]">
               <td className="px-4 py-2">Морковь</td>
               <td className="px-4 py-2">ЕАЭС N RU Д-RU.РА09.В.61444/23</td>
               <td className="px-4 py-2">13.11.2023 г</td>
               <td className="px-4 py-2">31.07.24 г</td>
               <td className="px-4 py-2">
-                <a href="White_cabbage.pdf" download className="text-blue-500 hover:text-blue-700">
+                <a href="White_cabbage.pdf" download className="text-black hover:text-red-700">
                   Скачать PDF
                 </a>
               </td>
             </tr>
-             <tr className="bg-gray-100">
+             <tr className=" bg-[#fbefe1]">
               <td className="px-4 py-2"></td>
               <td className="px-4 py-2">ЕАЭС N RU Д-RU.РА09.В.61444/23</td>
               <td className="px-4 py-2">13.11.2023 г</td>
               <td className="px-4 py-2">31.07.24 г</td>
               <td className="px-4 py-2">
-                <a href="White_cabbage.pdf" download className="text-blue-500 hover:text-blue-700">
+                <a href="White_cabbage.pdf" download className="text-black hover:text-red-700">
                   Скачать PDF
                 </a>
               </td>
@@ -75,21 +75,21 @@ const DocTable = () => {
       <div className="mt-8">
         <table className="min-w-full">
           <thead>
-            <tr className="bg-gray-200">
+            <tr className=" bg-[#fbefe1]">
               <th className="px-4 py-2">Полезные документы</th>
             </tr>
           </thead>
           <tbody>
-            <tr className="bg-gray-100">
+            <tr className=" bg-[#fbefe1]">
               <td className="px-4 py-2">
-                <a href="/Dogovor_prodazhi_produktsii.docx" download className="text-blue-500 hover:text-blue-700">
+                <a href="/Dogovor_prodazhi_produktsii.docx" download className="text-black hover:text-red-700">
                   Договор продажи продукции собственного производства
                 </a>
               </td>
             </tr>
-            <tr className="bg-gray-200">
+            <tr className=" bg-[#fbefe1]">
               <td className="px-4 py-2">
-                <a href="/details.pdf" download className="text-blue-500 hover:text-blue-700">
+                <a href="/details.pdf" download className="text-black hover:text-red-700">
                   Реквизиты АО "Совхоз Южно-Сахалинский"
                 </a>
               </td>
