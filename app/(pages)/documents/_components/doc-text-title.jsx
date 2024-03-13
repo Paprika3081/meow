@@ -9,8 +9,8 @@ const DocTextTitle = () => {
   return (
     <div className="container mx-auto px-4 py-8 md:px-8 lg:px-16">
       <div className="text-center">
-        <h3 className={`text-lg md:text-xl lg:text-2xl font-semibold text-gray-800 ${Yeseva.className}`}>Документы</h3>
-        <h1 className={`text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 ${lobster.className}`}>О качестве продукции</h1>
+        <h3 className={`text-lg md:text-xl lg:text-2xl font-semibold text-gray-400 ${Yeseva.className}`}>Документы</h3>
+        <h1 className={`text-3xl md:text-4xl lg:text-5xl font-bold text-amber-950 ${lobster.className}`}>О качестве продукции</h1>
       </div>
       <div className="mt-8">
         <h5 className="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">

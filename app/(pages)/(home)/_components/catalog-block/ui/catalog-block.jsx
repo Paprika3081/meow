@@ -19,7 +19,7 @@ const CatalogBlock = () => {
         радовать вас своим вкусом и полезными свойствами ❞
       </p>
       <h3
-        className={`flex items-center text-lg md:md:text-3xl ${lobster.className}`}
+        className={`flex items-center text-lg md:md:text-3xl  text-amber-950 ${lobster.className}`}
       >
         Добро пожаловать – в место, где забота о природе становится вкусом
         жизни!

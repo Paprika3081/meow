@@ -18,7 +18,7 @@ const ContactInfo = () => {
       >
         Добро пожаловать
       </h3>
-      <h1 className={`text-4xl md:text-[60px]  ${lobster.className}`}>
+      <h1 className={`text-4xl md:text-[60px]  text-amber-950 ${lobster.className}`}>
         Связаться <br /> с нами
       </h1>
 

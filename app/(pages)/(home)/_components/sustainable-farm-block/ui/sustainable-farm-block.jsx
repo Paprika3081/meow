@@ -2,8 +2,17 @@ import Image from "next/image"
 
 const SustainableFarmBlock = () => {
   return (
-    <div className="flex w-full items-center justify-center bg-stone-600 bg-fonfon  md:h-full">
-      <div className="container mx-auto grid grid-cols-2 grid-rows-2 gap-3 md:max-h-[520px] md:max-w-[900px] md:grid-cols-3">
+    <>
+     <div className="relative bg-stone-600 bg-cover bg-center md:bg-top bg-no-repeat py-8 md:py-12">
+        <Image
+          src="/background-lavr.png"
+          alt="Кастомный фон"
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+        />
+        <div className="flex w-full items-center justify-center bg-stone-600 bg-fonfon  md:h-full">
+        <div className="container mx-auto grid grid-cols-2 grid-rows-2 gap-3 md:max-h-[520px] md:max-w-[900px] md:grid-cols-3">
         <div className="relative rounded-lg">
           <Image
             title="Корова"
@@ -15,7 +24,7 @@ const SustainableFarmBlock = () => {
             className={"absolute rounded-lg object-cover"}
           />
         </div>
-        <article className="relative flex flex-col items-center  rounded-lg bg-white p-2 md:h-[340px]">
+        <article className="relative flex flex-col items-center  text-amber-950  rounded-lg bg-white p-2 md:h-[340px]">
           <Image
             title="Органическое земледелие"
             src="/iconka-list.png"
@@ -43,7 +52,7 @@ const SustainableFarmBlock = () => {
             className={"absolute rounded-lg object-cover"}
           />
         </div>
-        <article className="relative flex flex-col items-center justify-center rounded-lg bg-white p-2">
+        <article className="relative flex flex-col items-center justify-center  text-amber-950 rounded-lg bg-white p-2">
           <Image
             title="Животноводство"
             itemProp="image"
@@ -69,7 +78,7 @@ const SustainableFarmBlock = () => {
             className={"absolute rounded-lg object-cover"}
           />
         </div>
-        <article className="relative flex flex-col items-center justify-center rounded-lg bg-white p-2">
+        <article className="relative flex flex-col items-center justify-center  text-amber-950 rounded-lg bg-white p-2">
           <Image
             title="Земледелие"
             itemProp="image"
@@ -90,6 +99,9 @@ const SustainableFarmBlock = () => {
         </article>
       </div>
     </div>
+  </div>
+    </>
+    
   )
 }
 
