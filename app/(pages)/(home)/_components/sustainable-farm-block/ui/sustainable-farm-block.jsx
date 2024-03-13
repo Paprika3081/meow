@@ -15,13 +15,13 @@ const SustainableFarmBlock = () => {
             className={"absolute rounded-lg object-cover"}
           />
         </div>
-        <article className="relative flex flex-col items-center justify-center rounded-lg bg-white p-2 md:h-[340px]">
+        <article className="relative flex flex-col items-center  rounded-lg bg-white p-2 md:h-[340px]">
           <Image
             title="Органическое земледелие"
             src="/iconka-list.png"
             alt="Изображение с органическим земледелием"
-            height={70}
-            width={70}
+            height={60}
+            width={60}
           />
           <h3 className="text-center text-sm font-bold md:text-lg">
             Органическое земледелие

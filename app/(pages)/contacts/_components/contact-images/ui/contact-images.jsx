@@ -1,24 +1,47 @@
-import Image from "next/image"
+import Image from "next/image";
 
 const ContactImages = () => {
   return (
-    <div className="relative hidden h-full w-1/2 flex-col items-center justify-center gap-5 md:flex">
-      <Image
-        src="/cow-contacts.jpg"
-        alt="photo"
-        width={550}
-        height={450}
-        className="h-[300px] w-[300px] rounded-3xl object-cover"
-      />
-      <Image
-        src="/cow-contacts2.jpg"
-        alt="photo"
-        width={350}
-        height={450}
-        className="absolute right-[300px] top-[150px] h-[300px] w-[300px] rounded-3xl object-cover"
-      />
-    </div>
-  )
-}
+    <>
+      <section className="py-10 px-4 md:px-8 lg:px-12 flex justify-center items-center">
+        <div className="hidden md:flex flex-col items-center justify-center gap-5 w-full">
+          <div className="relative w-72 h-72 rounded-full overflow-hidden">
+            <Image
+              src="/cow2-contacts.jpg"
+              alt="photo"
+              width={450}
+              height={450}
+              layout="responsive"
+              objectFit="cover"
+              className="rounded-full"
+            />
+          </div>
+          <div className="relative w-72 h-72 rounded-full overflow-hidden">
+            <Image
+              src="/milk-contacts.jpg"
+              alt="photo"
+              width={450}
+              height={450}
+              layout="responsive"
+              objectFit="cover"
+              className="rounded-full"
+            />
+          </div>
+          <div className="relative w-72 h-72 rounded-full overflow-hidden">
+            <Image
+              src="/grow-contacts.jpg"
+              alt="photo"
+              width={450}
+              height={450}
+              layout="responsive"
+              objectFit="cover"
+              className="rounded-full"
+            />
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
 
-export { ContactImages }
+export { ContactImages };
