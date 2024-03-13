@@ -15,16 +15,17 @@ const AboutBlock = () => {
         </span>
       </h2>
       <div className="flex justify-center items-center md:justify-end md:w-1/2">
-        <div className="relative w-full h-80 md:w-3/4 lg:h-96 md:h-full rounded-full overflow-hidden">
-          <Image
-            src={"/cowcow.jpg"}
-            width={800}
-            height={800}
-            alt={"cow"}
-            className={` md:rounded-lg`}
-          />
-        </div>
-      </div>
+      <div className="relative w-full h-80 md:w-3/4 lg:h-96 md:h-full rounded-full overflow-hidden">
+        <Image
+        src={"/cowcow-new2.jpg"}
+        width={800}
+        height={800}
+        alt={"cow"}
+        className={`w-full h-full object-cover`}
+        />
+  </div>
+</div>
+
       <div className={"flex flex-col justify-center gap-8 md:w-1/2 md:items-center md:justify-start md:gap-20"}>
         <h2 className={"relative hidden text-3xl text-white md:block md:text-5xl lg:text-6xl"}>
           С любовью
