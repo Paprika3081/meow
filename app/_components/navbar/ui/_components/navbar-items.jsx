@@ -74,7 +74,7 @@ const NavbarItems = ({ pathname }) => {
                   {item.subItems.map((subItem) => (
                     <li key={subItem.id} className="p-2">
                       <a
-                        className={`${pathname === subItem.path ? "border-b-2 border-[#57534E] text-gray-500" : "z-10"}`}
+                        className={`${pathname === subItem.path ? "border-b-2  bg-[#ffffff] text-gray-600" : "z-10"}`}
                         href={subItem.path}
                       >
                         {subItem.title}
@@ -86,7 +86,7 @@ const NavbarItems = ({ pathname }) => {
             </>
           ) : (
             <a
-              className={`${pathname === item.path ? "border-b-2 border-[#57534E] text-gray-500" : ""}`}
+              className={`${pathname === item.path ? "border-b-2 border-[#ffffff] text-white" : ""}`}
               href={item.path}
             >
               {item.title}

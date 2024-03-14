@@ -58,7 +58,7 @@ const DocTable = () => {
               </td>
             </tr>
              <tr className=" bg-[#fbefe1]">
-              <td className="px-4 py-2"></td>
+              <td className="px-4 py-2">Свекла</td>
               <td className="px-4 py-2">ЕАЭС N RU Д-RU.РА09.В.61444/23</td>
               <td className="px-4 py-2">13.11.2023 г</td>
               <td className="px-4 py-2">31.07.24 г</td>
