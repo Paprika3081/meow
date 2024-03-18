@@ -3,7 +3,7 @@ import Image from "next/image"
 
 const HistoryText = () => {
   return (
-     <div className="flex w-[1000px] flex-col items-center justify-center text-justify ">
+     <div className="flex w-[1000px] flex-col items-center indent-8 justify-center text-justify ">
           <h5>
             История молочно-овощеводческого совхоза «Южно-Сахалинский» берёт
             своё начало 25 марта 1948 года с освоения территорий Анивского

@@ -36,7 +36,7 @@ const Navbar = () => {
       <ul className={"hidden md:flex md:gap-5"}>
         <NavbarItems pathname={pathname} />
       </ul>
-      <SocialIcon/>
+     
       <div className={"relative flex justify-center"}>
         <CiMenuBurger
           onClick={handleShowMenu}

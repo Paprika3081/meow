@@ -36,7 +36,12 @@ const items = [
       {
         id: 7,
         title: "ЗАКАЗЧИКАМ",
-        path: "/customers",
+        path: "/order",
+      },
+      {
+        id: 8,
+        title: "ВАКАНСИИ",
+        path: "/vacancy",
       },
     ],
   },

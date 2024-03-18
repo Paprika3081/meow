@@ -20,7 +20,7 @@ const DocTable = () => {
               <th className="px-4 py-2">Регистрационный номер</th>
               <th className="px-4 py-2">Дата регистрации</th>
               <th className="px-4 py-2">Действительна по</th>
-              <th className="px-4 py-2">Ссылка</th>
+              <th className="px-4 py-2"><link rel="stylesheet" href="https://drive.google.com/file/d/1ut7lTXF2yVuyTNTSC-vDW9MTNc2swF6Z/view?usp=sharing" /></th>
             </tr>
           </thead>
           <tbody>

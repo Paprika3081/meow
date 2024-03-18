@@ -28,8 +28,10 @@ const CatalogBlock = () => {
         className={
           "rounded-md bg-[#57534E] p-2 text-lg text-white duration-150 hover:bg-[#ECE3D8] hover:text-black hover:shadow-md hover:transition-all md:px-14 md:py-5"
         }
+       
       >
         каталог
+        
       </button>
     </section>
   )
