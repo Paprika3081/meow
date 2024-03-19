@@ -8,7 +8,7 @@ const Yeseva = Yeseva_One({ weight: ["400"], subsets: ["cyrillic", "latin"] });
 const AboutBlock = () => {
   return (
     <section className={"flex w-full flex-col items-center justify-center gap-10 bg-[#ECE3D8] p-5 md:flex-row lg:h-[85%]"}>
-      <h2 className={`relative text-3xl text-white md:hidden md:text-5xl lg:text-6xl ${Yeseva.className}`}>
+      <h2 className={`relative ${Yeseva.className} text-3xl text-white md:hidden md:text-5xl lg:text-6xl`}>
         С любовью
         <span className={`absolute left-2 top-4 text-4xl font-bold text-amber-950 md:top-6 md:text-6xl lg:text-7xl ${lobster.className}`}>
           О нас
@@ -25,11 +25,10 @@ const AboutBlock = () => {
         />
   </div>
 </div>
-
       <div className={"flex flex-col justify-center gap-8 md:w-1/2 md:items-center md:justify-start md:gap-20"}>
-        <h2 className={"relative hidden text-3xl text-white md:block md:text-5xl lg:text-6xl"}>
+        <h2 className={`relative ${Yeseva.className} hidden text-3xl text-white md:block md:text-5xl lg:text-6xl`}>
           С любовью
-          <span className={"absolute left-2 top-4 text-4xl font-bold text-amber-950 md:top-6 md:text-6xl lg:text-7xl"}>
+          <span className={`absolute ${lobster.className} left-2 top-4 text-4xl font-bold text-amber-950 md:top-6 md:text-6xl lg:text-7xl`}>
             О нас
           </span>
         </h2>

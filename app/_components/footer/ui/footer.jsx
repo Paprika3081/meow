@@ -1,7 +1,7 @@
 
 import Image from "next/image";
 
-const FooterItems = () => {
+const Footer = () => {
   return (
  <footer className="bg-gray-800 text-white py-8">
    <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-4">
@@ -26,4 +26,4 @@ const FooterItems = () => {
   );
 };
 
-export { FooterItems };
+export { Footer };

@@ -1,6 +1,7 @@
 "use client"
 
 import { Lobster } from "next/font/google"
+import Link from "next/link"
 
 const lobster = Lobster({ weight: ["400"], subsets: ["cyrillic", "latin"] })
 
@@ -24,7 +25,7 @@ const CatalogBlock = () => {
         Добро пожаловать – в место, где забота о природе становится вкусом
         жизни!
       </h3>
-      <button
+      <Link href={'/catalog'}><button
         className={
           "rounded-md bg-[#57534E] p-2 text-lg text-white duration-150 hover:bg-[#ECE3D8] hover:text-black hover:shadow-md hover:transition-all md:px-14 md:py-5"
         }
@@ -32,7 +33,8 @@ const CatalogBlock = () => {
       >
         каталог
         
-      </button>
+      </button></Link>
+      
     </section>
   )
 }
