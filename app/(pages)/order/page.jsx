@@ -33,7 +33,7 @@ const CustomersPage = () => {
         <p className="text-lg font-semibold text-gray-700 mt-4">
           Присоединяйтесь к нашей дружной семье, будем рады сотрудничать с вами!
         </p>
-        <button className="bg-blue-500 text-white font-bold py-2 px-4 rounded transition duration-300 hover:bg-blue-600 focus:outline-none focus:bg-blue-600 mt-4">
+        <button className="rounded-md bg-[#57534E] p-2 text-lg text-white duration-150 hover:bg-[#ECE3D8]  hover:text-black hover:shadow-md hover:transition-all md:px-15 md:py-3">
           Отправить сообщение
         </button>
       </div>
