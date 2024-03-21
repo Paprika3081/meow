@@ -19,9 +19,11 @@ export default function RootLayout({ children }) {
       <body className={font.className}>
         <Navbar />
         <main>{children}</main>
-        <ToTopButton className={'fixed bottom-10 right-10 w-[50px] h-[50px] text-emerald-400 cursor-pointer'} />
+        <ToTopButton className={'fixed bottom-10 right-10 w-[50px] h-[50px] text-[#ada295] cursor-pointer'} />
         <Footer />
       </body>
     </html>
   )
 }
+
+
