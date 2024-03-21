@@ -9,7 +9,7 @@ const HistoryPage = () => {
       <div className={"flex flex-col items-center justify-center"}>
         <HistoryTitle/>
         <HistoryText/>
-        <HistoryVideo/>
+        {/* <HistoryVideo/> */}
       </div>
     </>
   )
