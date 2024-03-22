@@ -7,7 +7,7 @@ const VacancyPage = () => {
   return (
     <div className="flex flex-col items-center justify-center">
        <VacancyTitle/>
-       {/* <VacancyList/> */}
+       <VacancyList/>
     </div>
   )
 }

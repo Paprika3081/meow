@@ -1,35 +1,43 @@
-// "use client"
+import React, { useState, useEffect } from 'react';
+import VacancyCard from './vacancy-card'; // Предположим, что у вас есть компонент VacancyCard для отображения карточки вакансии
 
-// import React from 'react';
-// import VacancyItem from './vacancy-item';
+function VacancyList() {
+  const [vacancies, setVacancies] = useState([]);
 
-// function VacancyList() {
-//   const vacancies = [
-//     {
-//       id: 1,
-//       title: "Название вакансии 1",
-//       description: "Описание вакансии 1",
-//       email: "hr@example.com"
-//     },
-//     {
-//       id: 2,
-//       title: "Название вакансии 2",
-//       description: "Описание вакансии 2",
-//       email: "recruitment@example.com"
-//     },
-//     // Добавьте больше вакансий по аналогии
-//   ];
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('https://a4ddb814deba66b5.mokky.dev/vacancy');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        setVacancies(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
 
-//   return (
-//     <div className="container mx-auto py-8">
-//       <h1 className="text-3xl font-semibold mb-4">Список вакансий</h1>
-//       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-//         {vacancies.map(vacancy => (
-//           <VacancyItem key={vacancy.id} title={vacancy.title} description={vacancy.description} email={vacancy.email} />
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
+    fetchData();
+  }, []);
 
-// export {VacancyList}
+  return (
+    <div className="container mx-auto py-8">
+      <h1 className="text-3xl font-semibold mb-4">Список вакансий</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {vacancies.map(vacancy => (
+          <VacancyCard
+            key={vacancy.id}
+            name={vacancy.name}
+            salary={vacancy.salary}
+            experience={vacancy.experience}
+            busyness={vacancy.busyness}
+            description={vacancy.description}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default VacancyList;

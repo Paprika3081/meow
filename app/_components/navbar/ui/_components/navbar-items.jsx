@@ -59,7 +59,7 @@ const NavbarItems = ({ pathname }) => {
   }
 
   return (
-    <ul className="relative flex">
+    <ul className="relative  flex">
       {items.map((item) => (
         <li
           key={item.id}
@@ -75,7 +75,7 @@ const NavbarItems = ({ pathname }) => {
             <>
               <span>{item.title}</span>
               {showSubMenu && (
-                <ul className="absolute right-0 mt-2 bg-white shadow-md">
+                <ul className="absolute  right-0 mt-2 bg-white shadow-md">
                   {item.subItems.map((subItem) => (
                     <li key={subItem.id} className="p-2">
                       <a
