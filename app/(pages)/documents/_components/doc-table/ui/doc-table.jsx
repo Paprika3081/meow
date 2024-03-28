@@ -1,16 +1,31 @@
-import { Lobster, Yeseva_One } from "next/font/google"
-
-import React from 'react';
-
-const lobster = Lobster({ weight: ["400"], subsets: ["cyrillic", "latin"] })
-const Yeseva = Yeseva_One({ weight: ["400"], subsets: ["cyrillic", "latin"] })
-
+import React, { useEffect, useState } from 'react';
+import axios from 'axios'; // Подключаем Axios
 
 const DocTable = () => {
+  // Состояние для хранения данных
+  const [data, setData] = useState([]);
+
+  // Эффект для выполнения HTTP-запроса при загрузке компонента
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // Выполняем GET-запрос к ресурсу
+        const response = await axios.get('https://a4ddb814deba66b5.mokky.dev/documents');
+
+        // Обновляем состояние данными из ответа
+        setData(response.data);
+      } catch (error) {
+        console.error('Ошибка получения данных:', error);
+      }
+    };
+
+    fetchData(); // Вызываем функцию получения данных
+  }, []);
+
   return (
     <div className="container mx-auto px-4 py-8 md:px-8 lg:px-16">
       <div className="mb-8">
-        <h3 className={`text-lg md:text-xl lg:text-2xl font-semibold  text-gray-400 ${Yeseva.className}`}>Декларации соответствия</h3>
+        <h3 className={`text-lg md:text-xl lg:text-2xl font-semibold  text-gray-400`}>Декларации соответствия</h3>
       </div>
       <div className="overflow-x-auto">
         <table className="min-w-full">
@@ -20,58 +35,29 @@ const DocTable = () => {
               <th className="px-4 py-2">Регистрационный номер</th>
               <th className="px-4 py-2">Дата регистрации</th>
               <th className="px-4 py-2">Действительна по</th>
-              <th className="px-4 py-2"><link rel="stylesheet" href="https://drive.google.com/file/d/1ut7lTXF2yVuyTNTSC-vDW9MTNc2swF6Z/view?usp=sharing" /></th>
+              <th className="px-4 py-2">PDF</th>
             </tr>
           </thead>
           <tbody>
-            <tr className=" bg-[#fbefe1]">
-              <td className="px-4 py-2">Капуста белокочанная</td>
-              <td className="px-4 py-2">ЕАЭС N RU Д-RU.РА09.В.61444/23</td>
-              <td className="px-4 py-2">13.11.2023 г</td>
-              <td className="px-4 py-2">31.07.24 г</td>
-              <td className="px-4 py-2">
-                <a href="White_cabbage.pdf" download className="text-black hover:text-red-700">
-                  Скачать PDF
-                </a>
-              </td>
-            </tr>
-             <tr className="bg-[#fbefe1]">
-              <td className="px-4 py-2">Картофель</td>
-              <td className="px-4 py-2">ЕАЭС N RU Д-RU.РА09.В.61444/23</td>
-              <td className="px-4 py-2">13.11.2023 г</td>
-              <td className="px-4 py-2">31.07.24 г</td>
-              <td className="px-4 py-2">
-                <a href="White_cabbage.pdf" download className="text-black hover:text-red-700">
-                  Скачать PDF
-                </a>
-              </td>
-            </tr>
-             <tr className=" bg-[#fbefe1]">
-              <td className="px-4 py-2">Морковь</td>
-              <td className="px-4 py-2">ЕАЭС N RU Д-RU.РА09.В.61444/23</td>
-              <td className="px-4 py-2">13.11.2023 г</td>
-              <td className="px-4 py-2">31.07.24 г</td>
-              <td className="px-4 py-2">
-                <a href="White_cabbage.pdf" download className="text-black hover:text-red-700">
-                  Скачать PDF
-                </a>
-              </td>
-            </tr>
-             <tr className=" bg-[#fbefe1]">
-              <td className="px-4 py-2">Свекла</td>
-              <td className="px-4 py-2">ЕАЭС N RU Д-RU.РА09.В.61444/23</td>
-              <td className="px-4 py-2">13.11.2023 г</td>
-              <td className="px-4 py-2">31.07.24 г</td>
-              <td className="px-4 py-2">
-                <a href="White_cabbage.pdf" download className="text-black hover:text-red-700">
-                  Скачать PDF
-                </a>
-              </td>
-            </tr>
-            {/* Добавьте остальные строки здесь */}
+            {/* Маппим данные из состояния */}
+            {data.map((item, index) => (
+              <tr key={item.id} className={index % 2 === 0 ? 'bg-[#fbefe1]' : 'bg-[#f0e6d2]'}>
+                <td className="px-4 py-2">{item.products}</td>
+                <td className="px-4 py-2">{item.number}</td>
+                <td className="px-4 py-2">{item.date}</td>
+                <td className="px-4 py-2">{item.valid}</td>
+                <td className="px-4 py-2">
+                  {/* Вместо ссылки на PDF, можно использовать URL, предоставленный в данных */}
+                  <a href={item.link} download className="text-black hover:text-red-700">
+                    Скачать PDF
+                  </a>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
+      {/* Остальная часть компонента остается без изменений */}
       <div className="mt-8">
         <table className="min-w-full">
           <thead>
