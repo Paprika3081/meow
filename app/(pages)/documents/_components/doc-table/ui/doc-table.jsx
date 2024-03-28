@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'; // Подключаем Axios
+import { Lobster, Yeseva_One } from "next/font/google"
+
+const Yeseva = Yeseva_One({ weight: ["400"], subsets: ["cyrillic", "latin"] })
 
 const DocTable = () => {
   // Состояние для хранения данных
@@ -25,7 +28,7 @@ const DocTable = () => {
   return (
     <div className="container mx-auto px-4 py-8 md:px-8 lg:px-16">
       <div className="mb-8">
-        <h3 className={`text-lg md:text-xl lg:text-2xl font-semibold  text-gray-400`}>Декларации соответствия</h3>
+        <h3 className={`text-lg md:text-xl lg:text-2xl font-semibold ${Yeseva.className} text-gray-400`}>Декларации соответствия</h3>
       </div>
       <div className="overflow-x-auto">
         <table className="min-w-full">

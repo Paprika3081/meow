@@ -33,9 +33,10 @@ const CustomersPage = () => {
         <p className="text-lg font-semibold text-gray-700 mt-4">
           Присоединяйтесь к нашей дружной семье, будем рады сотрудничать с вами!
         </p>
-        <button className="rounded-md bg-[#57534E] p-2 text-lg text-white duration-150 hover:bg-[#ECE3D8]  hover:text-black hover:shadow-md hover:transition-all md:px-15 md:py-3">
+        {/* Используем ссылку с атрибутом mailto и применяем стили */}
+        <a href="mailto:office@agrosakhalin.ru" className="block w-full max-w-xs mx-auto rounded-md bg-[#57534E] p-2 text-lg text-white duration-150 hover:bg-[#ECE3D8]  hover:text-black hover:shadow-md hover:transition-all md:px-15 md:py-3">
           Отправить сообщение
-        </button>
+        </a>
       </div>
     </div>
   )
