@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import VacancyCard from './vacancy-card'; // Предположим, что у вас есть компонент VacancyCard для отображения карточки вакансии
+import { Yeseva_One } from "next/font/google"
+
+const Yeseva = Yeseva_One({weight: ["400"], subsets: ["cyrillic", "latin"]})
+
 
 function VacancyList() {
   const [vacancies, setVacancies] = useState([]);
@@ -23,7 +27,7 @@ function VacancyList() {
 
   return (
     <div className="container mx-auto py-8">
-      <h1 className="text-3xl font-semibold mb-4">Список вакансий</h1>
+      <h1 className={`text-3xl font-semibold mb-4  text-gray-400 ${Yeseva.className}`}>Список вакансий</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {vacancies.map(vacancy => (
           <VacancyCard

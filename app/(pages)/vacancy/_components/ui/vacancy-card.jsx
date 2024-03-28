@@ -3,35 +3,39 @@ import React, { useState } from 'react';
 function VacancyCard({ name, salary, experience, busyness, description }) {
   const [showModal, setShowModal] = useState(false);
   const [messageData, setMessageData] = useState({
-    email: '',
+    email: 'example@example.com', // Установка адреса отправителя по умолчанию
     message: '',
     file: null,
   });
+  const [errors, setErrors] = useState({});
 
   const toggleModal = () => {
     setShowModal(!showModal);
+    setErrors({}); // Сброс ошибок при открытии модального окна
   };
 
   const handleChange = (e) => {
-    if (e.target.name === 'file') {
-      const file = e.target.files[0];
-      if (file && file.type === 'application/pdf') {
-        setMessageData({
-          ...messageData,
-          [e.target.name]: file,
-        });
-      } else {
-        alert('Пожалуйста, выберите PDF файл.');
-      }
-    } else {
-      setMessageData({
-        ...messageData,
-        [e.target.name]: e.target.value,
-      });
-    }
+    setMessageData({
+      ...messageData,
+      [e.target.name]: e.target.value,
+    });
   };
 
-  const sendMessage = async () => {
+  const validateForm = () => {
+    const errors = {};
+    if (!messageData.email.includes('@')) {
+      errors.email = 'Неправильный формат email';
+    }
+    if (messageData.message.trim() === '') {
+      errors.message = 'Поле сообщения обязательно для заполнения';
+    }
+    setErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
+  const sendDataToEmail = async () => {
+    if (!validateForm()) return;
+
     const formData = new FormData();
     formData.append('email', messageData.email);
     formData.append('message', messageData.message);
@@ -48,8 +52,7 @@ function VacancyCard({ name, salary, experience, busyness, description }) {
         throw new Error('Failed to send message');
       }
       console.log('Message sent successfully');
-      // После успешной отправки сообщения вы можете выполнить какие-то действия, например, закрыть модальное окно
-      toggleModal();
+      toggleModal(); // Закрытие модального окна после успешной отправки
     } catch (error) {
       console.error('Error sending message:', error);
     }
@@ -80,24 +83,35 @@ function VacancyCard({ name, salary, experience, busyness, description }) {
               value={messageData.email}
               onChange={handleChange}
               placeholder="Введите ваш email"
-              className="border border-gray-400 rounded-md p-2 mb-2 w-full"
+              className={`border border-gray-400 rounded-md p-2 mb-2 w-full ${
+                errors.email ? 'border-red-500' : ''
+              }`}
             />
+            {errors.email && (
+              <p className="text-red-500 text-sm">{errors.email}</p>
+            )}
             <textarea
               name="message"
               value={messageData.message}
               onChange={handleChange}
               placeholder="Введите ваше сообщение"
               rows="4"
-              className="border border-gray-400 rounded-md p-2 mb-2 w-full"
+              className={`border border-gray-400 rounded-md p-2 mb-2 w-full ${
+                errors.message ? 'border-red-500' : ''
+              }`}
             ></textarea>
+            {errors.message && (
+              <p className="text-red-500 text-sm">{errors.message}</p>
+            )}
             <input
               type="file"
               name="file"
-              onChange={handleChange}
+              onChange={(e) => setMessageData({ ...messageData, file: e.target.files[0] })}
               accept=".pdf"
               className="border border-gray-400 rounded-md p-2 mb-2 w-full"
             />
-            <button onClick={sendMessage} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            {/* Изменение обработчика события для кнопки "Откликнуться" */}
+            <button onClick={sendDataToEmail} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
               Откликнуться
             </button>
             <button onClick={toggleModal} className="rounded-md bg-[#57534E] p-2 text-lg text-white duration-150 hover:bg-[#ECE3D8]  hover:text-black hover:shadow-md hover:transition-all md:px-15 md:py-3">
