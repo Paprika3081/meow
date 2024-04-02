@@ -1,1 +1,1 @@
-export { ProductForm } from './ui/product-form'
+export { ProductForm } from './ui/product-form-create'
