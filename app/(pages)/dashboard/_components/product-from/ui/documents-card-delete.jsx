@@ -1,8 +1,7 @@
 // DocumentEditDeleteCard.js
 'use client';
 
-
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import DocumentForm from "./documents-form-delete";
 
 const DocumentEditDeleteCard = ({ document }) => {
@@ -16,10 +15,6 @@ const DocumentEditDeleteCard = ({ document }) => {
     setIsModalOpen(false);
   };
 
-  useEffect(() => {
-    setIsModalOpen(false);
-  }, [document]);
-
   return (
     <div>
       <div className="bg-white rounded-lg shadow-lg p-6 cursor-pointer" onClick={openModal}>
@@ -32,4 +27,3 @@ const DocumentEditDeleteCard = ({ document }) => {
 };
 
 export default DocumentEditDeleteCard;
-

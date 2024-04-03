@@ -1,5 +1,4 @@
 'use client';
-
 import React, { useState, useEffect } from "react";
 
 const YourParentComponent = () => {
@@ -70,6 +69,8 @@ const YourParentComponent = () => {
   const handleCloseEditModal = () => {
     // Закрываем модальное окно редактирования
     setIsEditModalOpen(false);
+    // Открываем модальное окно списка документов
+    setIsListModalOpen(true);
   };
 
   return (
