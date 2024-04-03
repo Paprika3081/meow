@@ -1,3 +1,4 @@
+// ProductCreationForm.js
 'use client';
 import { useState } from "react";
 import Select from 'react-select';
@@ -56,10 +57,6 @@ const ProductCreationForm = ({ onClose }) => {
     }
   };
 
-  const handleClose = () => {
-    onClose(); // вызываем функцию onClose при нажатии на кнопку закрытия
-  };
-
   return (
     <div className="fixed z-10 inset-0 overflow-y-auto bg-gray-500 bg-opacity-75 flex items-center justify-center">
       <div className="bg-white rounded-lg overflow-hidden shadow-xl max-w-md w-full" role="dialog" aria-modal="true">
@@ -79,9 +76,9 @@ const ProductCreationForm = ({ onClose }) => {
           />
           <input type="file" name="image" onChange={(e) => setImage(e.target.files[0])} required className="block w-full px-4 py-2 mb-4 leading-tight text-gray-700 border border-gray-300 rounded focus:outline-none focus:bg-white focus:border-gray-500" />
           <input type="text" name='price' placeholder="Цена" value={price} onChange={(e) => setPrice(e.target.value)} required className="block w-full px-4 py-2 mb-4 leading-tight text-gray-700 border border-gray-300 rounded focus:outline-none focus:bg-white focus:border-gray-500" />
-          <div className="flex justify-between">
-            <button type="button" onClick={handleClose} className="block w-full mr-2 px-4 py-2 text-gray-700 bg-gray-300 rounded hover:bg-gray-400 focus:outline-none focus:bg-gray-400">Отмена</button>
-            <button type="submit" className="block w-full ml-2 px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none focus:bg-blue-700">Создать товар</button>
+          <div className="flex justify-end">
+            <button type="button" onClick={onClose} className="block px-4 py-2 text-gray-700 bg-gray-300 rounded hover:bg-gray-400 focus:outline-none focus:bg-gray-400">Отмена</button>
+            <button type="submit" className="block ml-2 px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none focus:bg-blue-700">Создать товар</button>
           </div>
         </form>
       </div>

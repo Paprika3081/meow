@@ -44,6 +44,13 @@ const ProductDeletionForm = ({ onClose }) => {
           >
             Удалить товар
           </button>
+          <button 
+            type="button" 
+            onClick={onClose} 
+            className="block w-full mt-2 px-4 py-2 text-gray-700 bg-gray-300 rounded hover:bg-gray-400 focus:outline-none focus:bg-gray-400"
+          >
+            Закрыть
+          </button>
         </form>
       </div>
     </div>
