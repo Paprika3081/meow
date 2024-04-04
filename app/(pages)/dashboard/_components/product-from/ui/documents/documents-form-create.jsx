@@ -33,8 +33,10 @@ const DeclarationForm = ({ onClose }) => {
     try {
       // Генерация уникального ID
       const id = Date.now().toString();
+      // Получение имени файла из поля link
+      const fileName = formData.link ? formData.link.name : '';
       // Создание объекта с данными для отправки
-      const dataToSend = { ...formData, id };
+      const dataToSend = { ...formData, id, link: `/${fileName}` };
       
       const response = await fetch("https://a4ddb814deba66b5.mokky.dev/documents", {
         method: "POST",
