@@ -3,98 +3,89 @@ import { Product } from '../../product';
 import { Button } from '@/app/_components/button/ui/button';
 
 const ProductCatalog = () => {
-  const [sortOption, setSortOption] = useState('default');
   const [filterOption, setFilterOption] = useState('all');
-  const [fetchedData, setFetchedData] = useState([])
-  const [page, setPage] = useState(1)
-  const [products, setProducts] = useState([])
-  const [filteredProducts, setFilteredProducts] = useState([])
+  const [searchKeyword, setSearchKeyword] = useState('');
+  const [fetchedData, setFetchedData] = useState([]);
+  const [page, setPage] = useState(1);
+  const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
     if (filterOption !== 'all') {
-     const filterProducts = async () => {
-       const response = await fetch(`https://a4ddb814deba66b5.mokky.dev/products?category=${filterOption}`)
-       const data = await response.json()
-       setFilteredProducts(data)
-     }
-     filterProducts()
+      const filterProducts = async () => {
+        const response = await fetch(`https://a4ddb814deba66b5.mokky.dev/products?category=${filterOption}`);
+        const data = await response.json();
+        setFilteredProducts(data);
+      };
+      filterProducts();
     } else {
-     const fetchProducts = async () => {
-       const response = await fetch(`https://a4ddb814deba66b5.mokky.dev/products?page=1&limit=9`)
-       const data = await response.json()
-       setProducts(data)
-     }
- 
-     fetchProducts()
+      const fetchProducts = async () => {
+        const response = await fetch(`https://a4ddb814deba66b5.mokky.dev/products?page=1&limit=9`);
+        const data = await response.json();
+        setProducts(data);
+      };
+
+      fetchProducts();
     }
-   }, [filterOption,page])
+  }, [filterOption, page]);
 
   const loadMore = () => {
     const nextPage = page + 1;
-    setPage(nextPage); 
-  
+    setPage(nextPage);
+
     const fetchMore = async () => {
       const response = await fetch(`https://a4ddb814deba66b5.mokky.dev/products?page=${nextPage}&limit=9`);
       const data = await response.json();
       setFetchedData(prevData => [...prevData, ...data.items]);
     };
-  
+
     fetchMore();
   };
 
- 
+  const handleSearch = async () => {
+    const response = await fetch(`https://a4ddb814deba66b5.mokky.dev/products?search=${searchKeyword}`);
+    const data = await response.json();
+    setFilteredProducts(data);
+  };
 
   return (
-    <div className='container m-auto'>
-      {/* Баннер специальных предложений */}
-      <div className="bg-yellow-300 p-4 mb-4 lg:col-span-3">
-        <h2 className="text-xl font-bold">Специальные предложения</h2>
-        <ul>
-          <li>Товар 1: скидка 10%</li>
-          <li>Товар 2: подарок при покупке</li>
-          {/* Добавьте остальные специальные предложения */}
-        </ul>
-      </div>
-
+    <div className='container mx-auto p-6'>
       {/* Панель с фильтрами */}
-      <div className="mb-4 lg:col-span-3">
-        <label htmlFor="filterOption" className="mr-2">Фильтр по категории:</label>
-        <select
-          id="filterOption"
-          className="px-2 py-1 border rounded mr-4"
-          value={filterOption}
-          onChange={(e) => setFilterOption(e.target.value)}
-        >
-          <option value="all">Все товары</option>
-          <option value="Молочная продукция">Молочная продукция</option>
-          <option value="Овощи">Овощи</option>
-          <option value="Мясная продукция">Мясная продукция</option>
-        </select>
-        <label htmlFor="sortOption" className="mr-2">Сортировать по:</label>
-        <select
-          id="sortOption"
-          className="px-2 py-1 border rounded"
-          value={sortOption}
-          onChange={(e) => setSortOption(e.target.value)}
-        >
-          <option value="default">По умолчанию</option>
-          <option value="priceLowToHigh">Цене (по возрастанию)</option>
-          <option value="priceHighToLow">Цене (по убыванию)</option>
-        </select>
+      <div className="flex justify-between items-center mb-6">
+        <div className="flex items-center">
+          <label htmlFor="filterOption" className="mr-2">Фильтр по категории:</label>
+          <select
+            id="filterOption"
+            className="px-2 py-1 border rounded mr-4 bg-gray-100"
+            value={filterOption}
+            onChange={(e) => setFilterOption(e.target.value)}
+          >
+            <option value="all">Все товары</option>
+            <option value="Молочная продукция">Молочная продукция</option>
+            <option value="Овощи">Овощи</option>
+            <option value="Мясная продукция">Мясная продукция</option>
+          </select>
+        </div>
+        <div className="flex items-center">
+          <input
+            type="text"
+            placeholder="Поиск по словам"
+            value={searchKeyword}
+            onChange={(e) => setSearchKeyword(e.target.value)}
+            className="px-2 py-1 border rounded mr-4 bg-gray-100"
+          />
+          <button onClick={handleSearch} className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Искать</button>
+        </div>
       </div>
 
       {/* Грид с товарами */}
       <div className="grid grid-rows-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
- 
-        {filterOption !== 'all' ? filteredProducts && filteredProducts.map((product) => (
-          <Product id={product.id} name={product.name} image={product.image} price={product.price} description={product.description} discount={product?.discount}/> 
+        {filteredProducts.length > 0 ? filteredProducts.map((product) => (
+          <Product key={product.id} name={product.name} image={product.image} description={product.description}/> 
         )) : products.items && products.items.map((product) => (
-          <Product id={product.id} name={product.name} image={product.image} price={product.price} description={product.description} discount={product?.discount}/> 
+          <Product key={product.id} name={product.name} image={product.image} description={product.description}/> 
         ))}
-        {filterOption === 'all' && products.items && fetchedData.map((product) => (
-          <Product id={product.id} name={product.name} image={product.image} price={product.price} description={product.description} discount={product?.discount}/> 
-        ))}
-        {filterOption === 'all' && page !== products?.meta?.total_pages ?<Button onClick={loadMore}>Загрузить еще (Всего товаров: {products.meta && products.meta.total_items})</Button> : ''}
+        {filteredProducts.length === 0 && page !== products?.meta?.total_pages ? <Button onClick={loadMore}>Загрузить еще (Всего товаров: {products.meta && products.meta.total_items})</Button> : ''}
       </div>
     </div>
   );
