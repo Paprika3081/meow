@@ -1,7 +1,7 @@
 import { Button } from "@/app/_components/button/ui/button"
 import Image from "next/image"
 
-export const CatalogModal = ({handleCloseModal, name, price, description,image, discount}) => {
+export const CatalogModal = ({handleCloseModal, name, description, image}) => {
   const handleContentClick = (e) => {
     e.stopPropagation()
   }
@@ -10,8 +10,6 @@ export const CatalogModal = ({handleCloseModal, name, price, description,image, 
           <div onClick={handleContentClick} className="bg-white p-8 rounded-lg">
             <Image src={image} width={400} height={400} className="w-full h-[400px] object-cover"/>
             <h2 className="text-2xl font-bold">{name}</h2>
-            <p className={`text-gray-700 text-center ${discount && 'line-through'}`}>Цена: {price} руб.</p>
-  {discount && <p className="text-red-500 font-bold text-center">{discount} руб.</p> }
             <p className="text-gray-700">{description}</p>
             <Button onClick={handleCloseModal}>Закрыть</Button>
           </div>

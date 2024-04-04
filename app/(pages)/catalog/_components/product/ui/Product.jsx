@@ -2,7 +2,7 @@ import { useState } from "react";
 import { CatalogModal } from "../../catalog-modal";
 import { Button } from "@/app/_components/button/ui/button";
 
-export const Product = ({ id, name, image, description, discount }) => {
+export const Product = ({ id, name, image, description }) => {
   const [showModal, setShowModal] = useState(false);
 
   const handleOpenModal = () => {
@@ -17,11 +17,10 @@ export const Product = ({ id, name, image, description, discount }) => {
     <div key={id} className="border p-4">
       <img src={image} alt={name} className="mb-2 m-auto" />
       <h3 className="text-xl font-bold text-center">{name}</h3>
-      <p className={`text-gray-700 text-center ${discount && 'line-through'}`}>{discount && <p className="text-red-500 font-bold text-center">{discount} руб.</p>}</p>
 
       <Button onClick={handleOpenModal}>Подробнее</Button>
       {showModal && (
-        <CatalogModal handleCloseModal={handleCloseModal} image={image} name={name} description={description} discount={discount} />
+        <CatalogModal handleCloseModal={handleCloseModal} image={image} name={name} description={description} />
       )}
     </div>
   );

@@ -4,7 +4,6 @@ import { Button } from '@/app/_components/button/ui/button';
 
 const ProductCatalog = () => {
   const [filterOption, setFilterOption] = useState('all');
-  const [searchKeyword, setSearchKeyword] = useState('');
   const [fetchedData, setFetchedData] = useState([]);
   const [page, setPage] = useState(1);
   const [products, setProducts] = useState([]);
@@ -42,12 +41,6 @@ const ProductCatalog = () => {
     fetchMore();
   };
 
-  const handleSearch = async () => {
-    const response = await fetch(`https://a4ddb814deba66b5.mokky.dev/products?search=${searchKeyword}`);
-    const data = await response.json();
-    setFilteredProducts(data);
-  };
-
   return (
     <div className='container mx-auto p-6'>
       {/* Панель с фильтрами */}
@@ -65,16 +58,6 @@ const ProductCatalog = () => {
             <option value="Овощи">Овощи</option>
             <option value="Мясная продукция">Мясная продукция</option>
           </select>
-        </div>
-        <div className="flex items-center">
-          <input
-            type="text"
-            placeholder="Поиск по словам"
-            value={searchKeyword}
-            onChange={(e) => setSearchKeyword(e.target.value)}
-            className="px-2 py-1 border rounded mr-4 bg-gray-100"
-          />
-          <button onClick={handleSearch} className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Искать</button>
         </div>
       </div>
 
