@@ -61,16 +61,22 @@ const ProductCreationForm = ({ onClose }) => {
     }
   };
 
-  // Функция для загрузки изображения из любого источника
+  // Функция для загрузки изображения на сервер
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      setImage(reader.result);
-    };
-    if (file) {
-      reader.readAsDataURL(file);
-    }
+    const formData = new FormData();
+    formData.append('image', file);
+
+    fetch('http://localhost:3001/upload', {
+      method: 'POST',
+      body: formData
+    })
+      .then(response => response.json())
+      .then(data => {
+        // Устанавливаем полученную ссылку на изображение
+        setImage(data.imagePath);
+      })
+      .catch(error => console.error('Ошибка при загрузке изображения:', error));
   };
 
   return (
