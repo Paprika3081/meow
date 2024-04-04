@@ -1,11 +1,11 @@
 'use client';
 
 import React, { useEffect, useState } from "react";
-import ProductCreationCard from "./_components/product-from/ui/product-card-create";
-import ProductDeletionCard from "./_components/product-from/ui/product-card-delete";
-import ProductTitle from "./_components/product-from/ui/product-titile";
-import DeclarationCreationCard from "./_components/product-from/ui/documents-card-create";
-import DeclarationEditDeleteCard from "./_components/product-from/ui/documents-card-delete";
+import ProductCreationCard from "./_components/product-from/ui/product/product-card-create";
+import ProductDeletionCard from "./_components/product-from/ui/product/product-card-delete";
+import ProductTitle from "./_components/product-from/ui/product/product-titile";
+import DeclarationCreationCard from "./_components/product-from/ui/documents/documents-card-create";
+import DeclarationEditDeleteCard from "./_components/product-from/ui/documents/documents-card-delete";
 
 const Dashboard = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
