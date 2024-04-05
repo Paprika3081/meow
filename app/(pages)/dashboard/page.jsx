@@ -9,6 +9,7 @@ import DeclarationEditDeleteCard from "./_components/product-from/ui/documents/d
 import VacancyCard from "../vacancy/_components/ui/vacancy-card";
 import VacancyCreationCard from "./_components/product-from/ui/vacancy/vacancy-card-create";
 import VacancyDeletionCard from "./_components/product-from/ui/vacancy/vacancy-card-delete";
+import VacancyCardEdit from "./_components/product-from/ui/vacancy/vacancy-card-edit";
 
 const Dashboard = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);

@@ -15,8 +15,8 @@ const VacancyCreationCard = () => {
   return (
     <div>
       <div className="bg-white rounded-lg shadow-lg p-6 cursor-pointer" onClick={openForm}>
-        <h2 className="text-xl font-semibold mb-4">Редактировать / Удалить вакансию</h2>
-        <p>Нажмите на карточку, чтобы редактировать или удалить вакансию</p>
+        <h2 className="text-xl font-semibold mb-4">Удалить вакансию</h2>
+        <p>Нажмите на карточку, чтобы удалить вакансию</p>
       </div>
       {isFormOpen && <VacancyFormEditDelete onClose={closeForm} />}
     </div>

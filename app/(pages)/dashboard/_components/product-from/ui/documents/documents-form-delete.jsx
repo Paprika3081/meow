@@ -1,4 +1,3 @@
-
 'use client';
 import React, { useState, useEffect } from "react";
 
@@ -50,7 +49,15 @@ const YourParentComponent = () => {
     }));
   };
 
-  const handleSaveChanges = () => {
+  const handleSaveChanges = (e) => {
+    e.preventDefault(); // Предотвращаем стандартное поведение формы
+
+    // Проверка на заполненность обязательных полей
+    if (!selectedDocument.products || !selectedDocument.number || !selectedDocument.date || !selectedDocument.valid || !selectedDocument.link) {
+      alert("Пожалуйста, заполните все поля.");
+      return;
+    }
+
     // Отправляем измененный документ на сервер
     fetch(`https://a4ddb814deba66b5.mokky.dev/documents/${selectedDocument.id}`, {
       method: "PATCH",
@@ -69,6 +76,7 @@ const YourParentComponent = () => {
     })
     .catch(error => {
       console.error("Произошла ошибка при сохранении изменений документа:", error);
+      alert("Произошла ошибка при сохранении изменений документа.");
     });
   };
 
@@ -163,4 +171,3 @@ const YourParentComponent = () => {
 };
 
 export default YourParentComponent;
-
