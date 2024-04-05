@@ -1,4 +1,4 @@
-// YourParentComponent.js
+
 'use client';
 import React, { useState, useEffect } from "react";
 
@@ -29,6 +29,11 @@ const YourParentComponent = () => {
   const handleEditDocument = (document) => {
     // Устанавливаем выбранный документ для редактирования
     setSelectedDocument(document);
+    setIsEditModalOpen(true);
+  };
+
+  const handleOpenEditModal = () => {
+    // Открываем модальное окно редактирования
     setIsEditModalOpen(true);
   };
 
@@ -158,3 +163,4 @@ const YourParentComponent = () => {
 };
 
 export default YourParentComponent;
+
