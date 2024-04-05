@@ -64,9 +64,9 @@ const ProductCatalog = () => {
       {/* Грид с товарами */}
       <div className="grid grid-rows-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {filteredProducts.length > 0 ? filteredProducts.map((product) => (
-          <Product key={product.id} name={product.name} image={product.image} description={product.description}/> 
+          <Product key={product.id} title={product.title} image={product.image} description={product.description}/> 
         )) : products.items && products.items.map((product) => (
-          <Product key={product.id} name={product.name} image={product.image} description={product.description}/> 
+          <Product key={product.id} title={product.title} image={product.image} description={product.description}/> 
         ))}
         {filteredProducts.length === 0 && page !== products?.meta?.total_pages ? <Button onClick={loadMore}>Загрузить еще (Всего товаров: {products.meta && products.meta.total_items})</Button> : ''}
       </div>

@@ -36,6 +36,8 @@ const ProductDeletionForm = ({ onClose }) => {
       if (response.ok) {
         console.log(`Товар "${selectedProduct}" был успешно удален`);
         onClose(); // Закрываем модальное окно после успешного удаления товара
+        // Обновляем список товаров после удаления
+        fetchProducts();
       } else {
         setError('Ошибка при удалении товара');
       }
@@ -57,7 +59,7 @@ const ProductDeletionForm = ({ onClose }) => {
           >
             <option value="">Выберите товар для удаления</option>
             {products.map((product) => (
-              <option key={product.name} value={product.name}>{product.name}</option>
+              <option key={product.id} value={product.id}>{product.title}</option>
             ))}
           </select>
           <button
@@ -80,5 +82,3 @@ const ProductDeletionForm = ({ onClose }) => {
 };
 
 export default ProductDeletionForm;
-
-
