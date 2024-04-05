@@ -1,3 +1,4 @@
+// YourParentComponent.js
 'use client';
 import React, { useState, useEffect } from "react";
 
@@ -66,6 +67,23 @@ const YourParentComponent = () => {
     });
   };
 
+  const handleDeleteDocument = (document) => {
+    // Отправляем запрос на удаление документа на сервер
+    fetch(`https://a4ddb814deba66b5.mokky.dev/documents/${document.id}`, {
+      method: "DELETE"
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Ошибка при удалении документа");
+      }
+      // Если удаление на сервере прошло успешно, обновляем список документов
+      setDocuments(documents.filter(doc => doc.id !== document.id));
+    })
+    .catch(error => {
+      console.error("Произошла ошибка при удалении документа:", error);
+    });
+  };
+
   const handleCloseEditModal = () => {
     // Закрываем модальное окно редактирования
     setIsEditModalOpen(false);
@@ -91,6 +109,7 @@ const YourParentComponent = () => {
                   </div>
                   <div className="flex">
                     <button onClick={() => handleEditDocument(document)} className="ml-4 px-3 py-1 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:bg-blue-700">Редактировать</button>
+                    <button onClick={() => handleDeleteDocument(document)} className="ml-4 px-3 py-1 bg-red-600 text-white rounded-md hover:bg-red-700 focus:outline-none focus:bg-red-700">Удалить</button>
                   </div>
                 </li>
               ))}
@@ -101,7 +120,7 @@ const YourParentComponent = () => {
           </div>
         </div>
       )}
-      {isEditModalOpen && (
+      {isEditModalOpen && selectedDocument && (
         <div className="fixed top-0 left-0 w-full h-screen flex justify-center items-center bg-gray-800 bg-opacity-75 overflow-y-auto">
           <div className="bg-white rounded-lg shadow-lg p-6 max-w-lg w-full">
             <h3 className="text-lg font-semibold mb-2">Редактирование документа</h3>
