@@ -8,6 +8,7 @@ import DeclarationCreationCard from "./_components/product-from/ui/documents/doc
 import DeclarationEditDeleteCard from "./_components/product-from/ui/documents/documents-card-delete";
 import VacancyCard from "../vacancy/_components/ui/vacancy-card";
 import VacancyCreationCard from "./_components/product-from/ui/vacancy/vacancy-card-create";
+import VacancyDeletionCard from "./_components/product-from/ui/vacancy/vacancy-card-delete";
 
 const Dashboard = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -59,6 +60,7 @@ const Dashboard = () => {
           <div className="flex flex-col shadow-sm p-6">
           <h1 className="text-xl font-bold mb-4">Работа с вакансиями</h1>
            <VacancyCreationCard/>
+           <VacancyDeletionCard/>
           </div>
      </div>
     </div>
