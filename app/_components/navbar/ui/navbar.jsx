@@ -1,5 +1,4 @@
-"use client"
-
+'use client';
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
@@ -24,13 +23,13 @@ const Navbar = () => {
     >
       <Link
         href={"/"}
-        className="absolute left-0 hidden h-[60px] w-[150px] md:block"
+        className="absolute left-0 hidden h-[60px] w-[150px] md:flex items-center justify-center"
       >
         <Image
-          fill
-          src={"/logo.png"}
+          src={"/logo.svg"}
           alt={"cowcow"}
-          className="object-contain"
+          width={150}
+          height={60}
         />
       </Link>
       <ul className={"hidden md:flex md:gap-5"}>
