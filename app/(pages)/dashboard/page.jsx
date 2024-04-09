@@ -10,6 +10,9 @@ import VacancyCard from "../vacancy/_components/ui/vacancy-card";
 import VacancyCreationCard from "./_components/product-from/ui/vacancy/ui/vacancy-card-create";
 import VacancyDeletionCard from "./_components/product-from/ui/vacancy/ui/vacancy-card-delete";
 import VacancyCardEdit from "./_components/product-from/ui/vacancy/ui/vacancy-card-edit";
+import StoreCreationCard from "./_components/product-from/ui/magazine/ui/shop-card-create";
+import StoreFormDelete from "./_components/product-from/ui/magazine/ui/shop-card-delete";
+import StoreDeletionCard from "./_components/product-from/ui/magazine/ui/shop-card-delete";
 
 const Dashboard = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -62,6 +65,11 @@ const Dashboard = () => {
           <h1 className="text-xl font-bold mb-4">Работа с вакансиями</h1>
            <VacancyCreationCard/>
            <VacancyDeletionCard/>
+          </div>
+          <div className="flex flex-col shadow-sm p-6">
+          <h1 className="text-xl font-bold mb-4">Работа с магазинами</h1>
+           <StoreCreationCard/>
+           <StoreDeletionCard/>
           </div>
      </div>
     </div>
