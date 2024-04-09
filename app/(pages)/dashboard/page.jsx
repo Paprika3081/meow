@@ -15,36 +15,75 @@ import StoreDeletionCard from "./_components/product-from/ui/magazine/ui/shop-ca
 import ProductEditCard from "./_components/product-from/ui/product/ui/product-card-edit";
 
 const Dashboard = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const login = "admin";
-  const password = "1111";
+  const login = process.env.NEXT_PUBLIC_LOGIN;
+  const storedPassword = process.env.NEXT_PUBLIC_PASSWORD;
+
+  const [enteredLogin, setEnteredLogin] = useState('');
+  const [enteredPassword, setEnteredPassword] = useState('');
+  const [authenticated, setAuthenticated] = useState(false);
+  const [error, setError] = useState('');
 
   useEffect(() => {
-    // Проверяем, была ли уже выполнена аутентификация
-    const storedIsAuthenticated = localStorage.getItem("isAuthenticated");
-    if (storedIsAuthenticated) {
-      setIsAuthenticated(true);
+    const storedLogin = localStorage.getItem('login');
+    if (storedLogin) {
+      setEnteredLogin(storedLogin);
     }
   }, []);
 
-  const authenticate = () => {
-    const enteredLogin = prompt("Введите логин:");
-    const enteredPassword = prompt("Введите пароль:");
-
-    if (enteredLogin === login && enteredPassword === password) {
-      // Если логин и пароль верные, устанавливаем флаг аутентификации
-      localStorage.setItem("isAuthenticated", true);
-      setIsAuthenticated(true);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (enteredLogin.toLowerCase() === login.toLowerCase() && enteredPassword === storedPassword) {
+      localStorage.setItem('isAuthenticated', true);
+      localStorage.setItem('login', enteredLogin);
+      setAuthenticated(true);
     } else {
-      // Если логин или пароль неверные, отменяем доступ
-      alert("Неверный логин или пароль. Доступ запрещен.");
+      setError('Неверный логин или пароль. Доступ запрещен.');
     }
   };
 
-  if (!isAuthenticated) {
-    authenticate();
-    return null; // Ничего не отображаем до выполнения аутентификации
+  if (!authenticated) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+          <h2 className="text-2xl mb-4">Войдите</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="mb-4">
+              <label className="block text-gray-700 text-sm font-bold mb-2">
+                Логин:
+              </label>
+              <input 
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                type="text" 
+                value={enteredLogin} 
+                onChange={(e) => setEnteredLogin(e.target.value)} 
+              />
+            </div>
+            <div className="mb-6">
+              <label className="block text-gray-700 text-sm font-bold mb-2">
+                Пароль:
+              </label>
+              <input 
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                type="password" 
+                value={enteredPassword} 
+                onChange={(e) => setEnteredPassword(e.target.value)} 
+              />
+            </div>
+            <div className="flex items-center justify-between">
+              <button 
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
+                type="submit"
+              >
+                Войти
+              </button>
+            </div>
+            {error && <p className="text-red-500 text-xs italic mt-4">{error}</p>}
+          </form>
+        </div>
+      </div>
+    );
   }
+
 
   return (
     <div>
