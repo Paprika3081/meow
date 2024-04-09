@@ -1,1 +1,1 @@
-export { ContactShops } from './ui/contact-shops'
+export { ContactShops } from './ui/contact-shop'

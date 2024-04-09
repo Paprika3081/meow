@@ -1,7 +1,8 @@
 import { ContactImages } from "./_components/contact-images";
 import { ContactInfo } from "./_components/contact-info";
 import ContactMap from "./_components/contact-map/ui/contact-map";
-import { ContactShops } from "./_components/contact-shops";
+import ShopList from "./_components/contact-shops/ui/contact-shop";
+
 
 const ContactsPage = () => {
   return (
@@ -11,7 +12,7 @@ const ContactsPage = () => {
         <ContactImages />
       </div>
       <ContactMap/>
-      <ContactShops />
+      <ShopList/>
     </div>
   );
 };
