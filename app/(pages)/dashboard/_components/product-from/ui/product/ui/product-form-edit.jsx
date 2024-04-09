@@ -104,6 +104,9 @@ const ProductEditForm = ({ onClose, productId }) => {
             required
             className="mb-4"
           />
+          <div className="flex justify-end mb-4">
+            <button type="button" onClick={onClose} className="text-gray-500 hover:text-gray-700 focus:outline-none">Закрыть</button>
+          </div>
           {selectedProduct && (
             <>
               <input type="text" name='sku' placeholder="Артикул" value={sku} onChange={(e) => setSku(e.target.value)} required className="block w-full px-4 py-2 mb-4 leading-tight text-gray-700 border border-gray-300 rounded focus:outline-none focus:bg-white focus:border-gray-500" />
@@ -130,7 +133,7 @@ const ProductEditForm = ({ onClose, productId }) => {
               />
               <input type="file" name="image" onChange={handleImageUpload} className="block w-full px-4 py-2 mb-4 leading-tight text-gray-700 border border-gray-300 rounded focus:outline-none focus:bg-white focus:border-gray-500" />
               <div className="flex justify-end">
-                <button type="button" onClick={onClose} className="block px-4 py-2 text-gray-700 bg-gray-300 rounded hover:bg-gray-400 focus:outline-none focus:bg-gray-400">Отмена</button>
+                <button type="button" onClick={onClose} className="block px-4 py-2 text-gray-700 bg-gray-300 rounded hover:bg-gray-400 focus:outline-none focus:bg-gray-400">Закрыть</button>
                 <button type="submit" className="block ml-2 px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none focus:bg-blue-700">Сохранить</button>
               </div>
             </>

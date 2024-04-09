@@ -1,5 +1,4 @@
 'use client';
-
 import React, { useEffect, useState } from "react";
 import ProductCreationCard from "./_components/product-from/ui/product/ui/product-card-create";
 import ProductDeletionCard from "./_components/product-from/ui/product/ui/product-card-delete";
@@ -48,33 +47,33 @@ const Dashboard = () => {
   }
 
   return (
-
-    <div> 
+    <div>
       <ProductTitle/>
-       <div className="flex items-center h-screen">
-         <div className="flex flex-col shadow-sm p-6">
-            <h1 className="text-xl font-bold mb-4">Работа с товарами</h1>
-            <ProductCreationCard />
-            <ProductDeletionCard />
-            <ProductEditCard/>
-         </div>
-         <div className="flex flex-col shadow-sm p-6">
-            <h1 className="text-xl font-bold mb-4">Редактирование Документов</h1>
-            <DeclarationCreationCard/>
-            <DeclarationEditDeleteCard/>
-          </div>
-          <div className="flex flex-col shadow-sm p-6">
-          <h1 className="text-xl font-bold mb-4">Работа с вакансиями</h1>
-           <VacancyCreationCard/>
-           <VacancyDeletionCard/>
-          </div>
-          <div className="flex flex-col shadow-sm p-6">
-          <h1 className="text-xl font-bold mb-4">Работа с магазинами</h1>
-           <StoreCreationCard/>
-           <StoreDeletionCard/>
-          </div>
-     </div>
+      <div className="grid grid-cols-2 gap-8 justify-center mx-auto max-w-7xl p-8">
+      <div className="bg-white rounded-lg shadow-md p-6">
+        <h1 className="text-xl font-bold mb-4">РАБОТА С ТОВАРАМИ</h1>
+        <ProductCreationCard />
+        <ProductDeletionCard />
+        <ProductEditCard/>
+      </div>
+      <div className="bg-white rounded-lg shadow-md p-6">
+        <h1 className="text-xl font-bold mb-4">РЕДАКТИРОВАНИЕ ДОКУМЕНТОВ</h1>
+        <DeclarationCreationCard/>
+        <DeclarationEditDeleteCard/>
+      </div>
+      <div className="bg-white rounded-lg shadow-md p-6">
+        <h1 className="text-xl font-bold mb-4">РАБОТА С ВАКАНСИЯМИ</h1>
+        <VacancyCreationCard/>
+        <VacancyDeletionCard/>
+      </div>
+      <div className="bg-white rounded-lg shadow-md p-6">
+        <h1 className="text-xl font-bold mb-4">РАБОТА С МАГАЗИНАМИ</h1>
+        <StoreCreationCard/>
+        <StoreDeletionCard/>
+      </div>
     </div>
+   </div>
+    
   );
 };
 
