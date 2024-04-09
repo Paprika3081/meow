@@ -20,12 +20,15 @@ const Dashboard = () => {
 
   const [enteredLogin, setEnteredLogin] = useState('');
   const [enteredPassword, setEnteredPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [authenticated, setAuthenticated] = useState(false);
   const [error, setError] = useState('');
 
   useEffect(() => {
+    const isAuthenticated = localStorage.getItem('isAuthenticated');
     const storedLogin = localStorage.getItem('login');
-    if (storedLogin) {
+    if (isAuthenticated && storedLogin) {
+      setAuthenticated(true);
       setEnteredLogin(storedLogin);
     }
   }, []);
@@ -39,6 +42,10 @@ const Dashboard = () => {
     } else {
       setError('Неверный логин или пароль. Доступ запрещен.');
     }
+  };
+
+  const toggleShowPassword = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
   };
 
   if (!authenticated) {
@@ -62,12 +69,20 @@ const Dashboard = () => {
               <label className="block text-gray-700 text-sm font-bold mb-2">
                 Пароль:
               </label>
-              <input 
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                type="password" 
-                value={enteredPassword} 
-                onChange={(e) => setEnteredPassword(e.target.value)} 
-              />
+              <div className="relative">
+                <input 
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                  type={showPassword ? "text" : "password"} 
+                  value={enteredPassword} 
+                  onChange={(e) => setEnteredPassword(e.target.value)} 
+                />
+                <button
+                  className="absolute inset-y-0 right-0 px-3 py-2"
+                  onClick={toggleShowPassword}
+                >
+                  {showPassword ? "Скрыть" : "Показать"}
+                </button>
+              </div>
             </div>
             <div className="flex items-center justify-between">
               <button 
@@ -83,7 +98,6 @@ const Dashboard = () => {
       </div>
     );
   }
-
 
   return (
     <div>
