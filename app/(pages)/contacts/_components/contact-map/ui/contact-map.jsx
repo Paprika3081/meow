@@ -1,9 +1,19 @@
-"use client"
+import React from 'react';
 
 const ContactMap = () => {
-  // return <div>
-  //   <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A9739bde8ddc434bbf3b3f655cfa3bdd03b71334e5843546b57ae9d9226559a7e&amp;width=100%25&amp;height=287&amp;lang=ru_RU&amp;scroll=true"></script>
-  // </div>
-}
+  return (
+    <div style={{ width: '100%', maxWidth: '100vw' }}>
+      <iframe
+        src="https://www.google.com/maps/d/u/0/embed?mid=1DcOpjtzhTAf7_9aDIIVkJ60izceVbps&ehbc=2E312F&noprof=1"
+        width="100%"
+        height="480"
+        title="Google Map"
+        allowFullScreen=""
+        aria-hidden="false"
+        tabIndex="0"
+      ></iframe>
+    </div>
+  );
+};
 
-export { ContactMap }
+export default ContactMap;
