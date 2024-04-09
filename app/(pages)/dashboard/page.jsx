@@ -1,15 +1,15 @@
 'use client';
 
 import React, { useEffect, useState } from "react";
-import ProductCreationCard from "./_components/product-from/ui/product/product-card-create";
-import ProductDeletionCard from "./_components/product-from/ui/product/product-card-delete";
-import ProductTitle from "./_components/product-from/ui/product/product-titile";
-import DeclarationCreationCard from "./_components/product-from/ui/documents/documents-card-create";
-import DeclarationEditDeleteCard from "./_components/product-from/ui/documents/documents-card-delete";
+import ProductCreationCard from "./_components/product-from/ui/product/ui/product-card-create";
+import ProductDeletionCard from "./_components/product-from/ui/product/ui/product-card-delete";
+import ProductTitle from "./_components/product-from/ui/product/ui/product-titile";
+import DeclarationCreationCard from "./_components/product-from/ui/documents/ui/documents-card-create";
+import DeclarationEditDeleteCard from "./_components/product-from/ui/documents/ui/documents-card-delete";
 import VacancyCard from "../vacancy/_components/ui/vacancy-card";
-import VacancyCreationCard from "./_components/product-from/ui/vacancy/vacancy-card-create";
-import VacancyDeletionCard from "./_components/product-from/ui/vacancy/vacancy-card-delete";
-import VacancyCardEdit from "./_components/product-from/ui/vacancy/vacancy-card-edit";
+import VacancyCreationCard from "./_components/product-from/ui/vacancy/ui/vacancy-card-create";
+import VacancyDeletionCard from "./_components/product-from/ui/vacancy/ui/vacancy-card-delete";
+import VacancyCardEdit from "./_components/product-from/ui/vacancy/ui/vacancy-card-edit";
 
 const Dashboard = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
