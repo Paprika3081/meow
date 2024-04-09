@@ -46,7 +46,7 @@ const StoreFormDelete = ({ onClose }) => {
             <select id="shop" name="shop" value={selectedShop} onChange={handleChange} required className="mt-1 px-3 py-2 w-full border rounded-md focus:outline-none focus:border-blue-500">
               <option value="">Выберите магазин</option>
               {shops.map(shop => (
-                <option key={shop.id} value={shop.id}>{shop.title}</option>
+                <option key={shop.id} value={shop.id}>{shop.title} - {shop.city}, {shop.street}</option>
               ))}
             </select>
           </div>

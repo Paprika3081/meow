@@ -13,9 +13,9 @@ const ProductCreationForm = ({ onClose }) => {
   const [success, setSuccess] = useState('');
 
   const categoryOptions = [
-    { value: 'мясная продукция', label: 'Мясная продукция' },
-    { value: 'молочная продукция', label: 'Молочная продукция' },
-    { value: 'овощи', label: 'Овощи' }
+    { value: 'Мясная продукция', label: 'Мясная продукция' },
+    { value: 'Молочная продукция', label: 'Молочная продукция' },
+    { value: 'Овощи', label: 'Овощи' }
   ];
 
   const onSubmit = async (e) => {
