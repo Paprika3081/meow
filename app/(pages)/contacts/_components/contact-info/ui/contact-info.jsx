@@ -61,7 +61,8 @@ const ContactInfo = () => {
         <p>
           Отдел кадров -<a href="mailto:ok@agrosakhalin.ru" className="hover:text-blue-500"> ok@agrosakhalin.ru</a>
         </p>
-        <p>Хотите работать у нас? <a href="https://yuzhno-sakhalinsk.hh.ru/employer/5844507" className="hover:text-blue-500">Нажмите сюда hh.ru</a></p>
+        <p>Хотите работать у нас?<a href="https://yuzhno-sakhalinsk.hh.ru/employer/5844507" className=" text-blue-400 hover:text-blue-500 font-semibold"> Нажмите сюда hh.ru</a></p>
+
       </div>
     </div>
   )
