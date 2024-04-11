@@ -18,7 +18,7 @@ const Navbar = () => {
   return (
     <nav
       className={
-        "sticky top-0 z-10 flex  h-[50px] w-full items-center justify-center bg-[#ece3d8] pl-3 pr-3 shadow-sm md:h-[80px]"
+        "sticky top-0 z-10 flex h-[50px] w-full items-center justify-center bg-[#ece3d8] pl-3 pr-3 shadow-sm md:h-[80px]"
       }
     >
       <Link
@@ -36,15 +36,16 @@ const Navbar = () => {
         <NavbarItems pathname={pathname} />
       </ul>
      
-      <div className={"relative  flex justify-center"}>
+      <div className={"relative flex justify-center"}>
         <CiMenuBurger
           onClick={handleShowMenu}
           className={`block md:hidden ${showMenu && "rotate-90"} transition-all duration-200`}
         />
         <div
           className={
-            "absolute  top-6 list-none border bg-white  text-center shadow-md"
+            "absolute top-6 list-none border bg-white text-center shadow-md"
           }
+          style={{ fontSize: showMenu ? "12px" : "inherit" }} // Устанавливаем размер шрифта 12px при открытом меню
         >
           {showMenu && <NavbarItems pathname={pathname} />}
         </div>
