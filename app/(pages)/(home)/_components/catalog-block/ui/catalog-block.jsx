@@ -1,9 +1,9 @@
-"use client"
+"use client";
+import { Lobster } from "next/font/google";
+import Link from "next/link";
+import Head from 'next/head'; // Добавлено для мета-тегов
 
-import { Lobster } from "next/font/google"
-import Link from "next/link"
-
-const lobster = Lobster({ weight: ["400"], subsets: ["cyrillic", "latin"] })
+const lobster = Lobster({ weight: ["400"], subsets: ["cyrillic", "latin"] });
 
 const CatalogBlock = () => {
   return (
@@ -12,6 +12,12 @@ const CatalogBlock = () => {
         "flex h-[80vh] flex-col items-center justify-center gap-8 text-center"
       }
     >
+      {/* Добавлено мета-теги для улучшения SEO */}
+      <Head>
+        <title>Название вашей страницы</title>
+        <meta name="description" content="Описание вашей страницы здесь" />
+        {/* Другие мета-теги, такие как ключевые слова, могут быть добавлены здесь */}
+      </Head>
       <p className={"w-full text-sm md:max-w-[1000px] md:text-2xl"}>
         ❝ Совхоз Южно-Сахалинский – это не только место производства, но и
         настоящая семья, где каждый член команды вносит свой вклад в общее
@@ -29,14 +35,11 @@ const CatalogBlock = () => {
         className={
           "rounded-md bg-[#57534E] p-2 text-lg text-white duration-150 hover:bg-[#ECE3D8] hover:text-black hover:shadow-md hover:transition-all md:px-14 md:py-5"
         }
-       
       >
         каталог
-        
       </button></Link>
-      
     </section>
-  )
-}
+  );
+};
 
-export { CatalogBlock }
+export { CatalogBlock };

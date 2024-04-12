@@ -1,8 +1,15 @@
 import Image from "next/image";
+import Head from 'next/head'; // Добавлено для мета-тегов
 
 const SustainableFarmBlock = () => {
   return (
     <div className="relative bg-stone-600 py-8 md:py-12">
+      {/* Добавлено мета-теги для улучшения SEO */}
+      <Head>
+        <title>Название вашей страницы</title>
+        <meta name="description" content="Описание вашей страницы здесь" />
+        {/* Другие мета-теги, такие как ключевые слова, могут быть добавлены здесь */}
+      </Head>
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url("/background-lavr.png")` }}

@@ -1,8 +1,18 @@
 import Image from "next/image";
+import Head from 'next/head'; // Добавлено для мета-тегов
 
 const Footer = () => {
   return (
     <footer className="bg-stone-600 text-white py-8">
+      {/* Добавлены мета-теги для улучшения SEO */}
+      <Head>
+        <title>Футер сайта - Совхоз Южно-Сахалинский</title>
+        <meta name="description" content="Подвал сайта компании Совхоз Южно-Сахалинский, представляющий контактные данные, ссылки на социальные сети и информацию о создателе сайта." />
+        <meta name="description" content="Телеграм свхоз Южно-сахалинский" />
+        <meta name="description" content="Сайт Совхоз Южно-Сахалинский" />
+        <meta name="description" content="Луговое Ул" />
+        {/* Другие мета-теги, такие как ключевые слова, могут быть добавлены здесь */}
+      </Head>
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-4">
         <div className="flex flex-col md:flex-row justify-start">
           <ul className="flex flex-col gap-2">
