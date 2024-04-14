@@ -3,7 +3,7 @@ import Head from 'next/head'; // Добавлено для мета-тегов
 
 const Footer = () => {
   return (
-    <footer className="bg-stone-600 text-white py-8">
+    <footer className="bg-stone-600 text-white py-3">
       {/* Добавлены мета-теги для улучшения SEO */}
       <Head>
         <title>Футер сайта - Совхоз Южно-Сахалинский</title>
