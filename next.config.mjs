@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    distDir: 'out' // Путь для сохранения собранных файлов
-  };
-  
-  export default nextConfig;
-  
+  // distDir: 'out' // Закомментируйте или удалите эту строку, чтобы использовать стандартную папку .next
+};
+
+export default nextConfig;
