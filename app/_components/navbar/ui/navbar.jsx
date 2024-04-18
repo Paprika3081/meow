@@ -42,21 +42,20 @@ const Navbar = () => {
         <NavbarItems pathname={pathname} />
       </ul>
      
-      <div className={"relative flex justify-center"}>
-        <CiMenuBurger
-          onClick={handleShowMenu}
-          className={`block md:hidden ${showMenu && "rotate-90"} transition-all duration-200`}
-        />
-        <div
-          className={
-            "absolute top-6 list-none border bg-white text-center shadow-md"
-          }
-          style={{ fontSize: showMenu ? "12px" : "inherit" }} // Устанавливаем размер шрифта 12px при открытом меню
-        >
-          {showMenu && <NavbarItems pathname={pathname} />}
-        </div>
-      
-      </div>
+         <div className="relative flex justify-center">
+          <CiMenuBurger
+         onClick={handleShowMenu}
+        className={`block md:hidden ${showMenu && "rotate-90"} transition-all duration-200`}
+      />
+  <div
+    className={`absolute top-6 list-none border bg-white text-center shadow-md ${
+      showMenu ? "text-xs" : "" // Применяем класс для размера шрифта 12px при открытом меню
+    }`}
+  >
+    {showMenu && <NavbarItems pathname={pathname} />}
+  </div>
+</div>
+
       
     </nav>
   );
