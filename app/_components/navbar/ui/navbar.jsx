@@ -49,9 +49,9 @@ const Navbar = () => {
         />
         <div
           className={
-            "absolute top-6 list-none border bg-white text-center shadow-md"
+            "absolute top-6  border flex flex-col bg-white text-center shadow-md"
           }
-          style={{ fontSize: showMenu ? "9.5px" : "inherit"}} // Устанавливаем размер шрифта 12px при открытом меню
+          style={{ fontSize: showMenu ? "9px" : "inherit"}} // Устанавливаем размер шрифта 12px при открытом меню
         >
           {showMenu && <NavbarItems pathname={pathname} />}
         </div>
