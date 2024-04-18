@@ -51,11 +51,15 @@ const NavbarItems = ({ pathname }) => {
   const [showSubMenu, setShowSubMenu] = useState(false)
 
   const handleMouseEnter = () => {
-    setShowSubMenu(true)
+    if (typeof window !== "undefined") { // Проверяем наличие window
+      setShowSubMenu(true)
+    }
   }
 
   const handleMouseLeave = () => {
-    setShowSubMenu(false)
+    if (typeof window !== "undefined") { // Проверяем наличие window
+      setShowSubMenu(false)
+    }
   }
 
   return (
