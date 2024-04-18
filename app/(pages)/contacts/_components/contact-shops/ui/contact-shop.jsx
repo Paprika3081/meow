@@ -23,20 +23,26 @@ const ShopList = () => {
     }, []);
 
     return (
-        <div className="container gap-4 mx-auto">
-            <h1 className={`text-3xl font-bold mb-4 p-8 text-amber-950 ${lobster.className}`}>Сеть фирменных магазинов</h1>
-            <div className="grid grid-cols-3 gap-6">
-                {shops.map(shop => (
-                    <div key={shop.id} className="bg-white rounded-lg shadow-md p-6">
-                        <div className="text-lg font-bold mb-2">{shop.title}</div>
-                        <div className="text-sm text-gray-500 mb-2">Город: {shop.city}</div>
-                        <div className="text-sm text-gray-500 mb-2">Улица: {shop.street}</div>
-                        <div className="text-sm text-gray-500 mb-2"> {shop.schedule1}</div>
-                        <div className="text-sm text-gray-500"> {shop.schedule2}</div>
-                    </div>
-                ))}
+<div className="container gap-4 mx-auto">
+    <h1 className={`text-3xl font-bold mb-4 p-8 text-amber-950 ${lobster.className}`}>Сеть фирменных магазинов</h1>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-6">
+        {shops.map(shop => (
+            <div key={shop.id} className="bg-white rounded-lg shadow-md p-4 sm:p-6 flex justify-center">
+                <div className="w-full sm:w-auto md:w-auto lg:w-auto xl:w-auto flex items-center justify-center flex-col">
+                    <div className="text-base sm:text-lg md:text-lg lg:text-lg xl:text-lg font-bold mb-2">{shop.title}</div>
+                    <div className="text-xs sm:text-sm md:text-sm lg:text-sm xl:text-sm text-gray-500 mb-2">Город: {shop.city}</div>
+                    <div className="text-xs sm:text-sm md:text-sm lg:text-sm xl:text-sm text-gray-500 mb-2">Улица: {shop.street}</div>
+                    <div className="text-xs sm:text-sm md:text-sm lg:text-sm xl:text-sm text-gray-500 mb-2"> {shop.schedule1}</div>
+                    <div className="text-xs sm:text-sm md:text-sm lg:text-sm xl:text-sm text-gray-500"> {shop.schedule2}</div>
+                </div>
             </div>
-        </div>
+        ))}
+    </div>
+</div>
+
+
+
+
     );
 };
 

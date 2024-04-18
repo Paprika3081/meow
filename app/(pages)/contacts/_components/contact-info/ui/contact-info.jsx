@@ -22,48 +22,27 @@ const ContactInfo = () => {
         Связаться <br /> с нами
       </h1>
 
-      <ul className="flex flex-col gap-4">
-        <h4 className="font-bold">Главный офис</h4>
-        <h5 className="font-bold">Адрес:</h5>
-        <li>
-          Сахалинская обл., г. Южно-Сахалинск, пл /р-н Луговое, ул. Дружбы, дом
-          №75
-        </li>
-        <h5 className="font-bold">Приемная:</h5>
-        <li>Тел: +7 (4242) 79-01-54</li>
-        <li>Email: office@agrosakhalin.ru</li>
-        <h5 className="font-bold">Режим работы:</h5>
-        <li>Пн - Пт с 9:00 до 18:00</li>
-      </ul>
-      <div className="flex flex-col gap-4">
-        <h4 className="font-bold">Контакты</h4>
-
-        <p>Генеральный директор - Богославец Наталья Леонтьевна</p>
-        <p>
-          Отдел реализации -
-          <a href="mailto:realization@agrosakhalin.ru" className="hover:text-blue-500"> realization@agrosakhalin.ru</a>
-        </p>
-        <p>
-          Секретарь -<a href="mailto:office@agrosakhalin.ru" className="hover:text-blue-500"> office@agrosakhalin.ru</a>
-        </p>
-        <p>
-          Юридический отдел - 
-          <a href="mailto:jurist@agrosakhalin.ru" className="hover:text-blue-500"> jurist@agrosakhalin.ru</a>
-        </p>
-        <p>
-          Отдел бухгалтерия -
-          <a href="mailto:accounting@agrosakhalin.ru" className="hover:text-blue-500"> accounting@agrosakhalin.ru</a>
-        </p>
-        <p>
-          Отдел информационных технологий -
-          <a href="mailto:admin@agrosakhalin.ru" className="hover:text-blue-500"> admin@agrosakhalin.ru</a>
-        </p>
-        <p>
-          Отдел кадров -<a href="mailto:ok@agrosakhalin.ru" className="hover:text-blue-500"> ok@agrosakhalin.ru</a>
-        </p>
-        <p>Хотите работать у нас?<a href="https://yuzhno-sakhalinsk.hh.ru/employer/5844507" className=" text-blue-400 hover:text-blue-500 font-semibold"> Нажмите сюда hh.ru</a></p>
-
+      <div className="sm:flex sm:flex-col gap-4 p-3">
+       <h4 className="font-bold text-xl">Главный офис</h4>
+       <h5 className="font-bold">Адрес:</h5>
+       <p className="mb-4">Сахалинская обл., г. Южно-Сахалинск, пл /р-н Луговое, ул. Дружбы, дом №75</p>
+       <h5 className="font-bold">Приемная:</h5>
+       <p className="mb-4">Тел: +7 (4242) 79-01-54</p>
+       <p className="mb-4">Email: <a href="mailto:office@agrosakhalin.ru" className="underline hover:text-blue-500">office@agrosakhalin.ru</a></p>
+       <h5 className="font-bold">Режим работы:</h5>
+       <p className="mb-4">Пн - Пт с 9:00 до 18:00</p>
       </div>
+     <div className="sm:flex sm:flex-col gap-4 p-3">
+        <h4 className="font-bold text-2xl">Контакты</h4>
+        <p className="mb-4">Генеральный директор - Богославец Наталья Леонтьевна</p>
+        <p className="mb-4">Отдел реализации - <a href="mailto:realization@agrosakhalin.ru" className="underline hover:text-blue-500">realization@agrosakhalin.ru</a></p>
+        <p className="mb-4">Секретарь - <a href="mailto:office@agrosakhalin.ru" className="underline hover:text-blue-500">office@agrosakhalin.ru</a></p>
+        <p className="mb-4">Юридический отдел - <a href="mailto:jurist@agrosakhalin.ru" className="underline hover:text-blue-500">jurist@agrosakhalin.ru</a></p>
+        <p className="mb-4">Отдел бухгалтерия - <a href="mailto:accounting@agrosakhalin.ru" className="underline hover:text-blue-500">accounting@agrosakhalin.ru</a></p>
+        <p className="mb-4">Отдел информационных технологий - <a href="mailto:admin@agrosakhalin.ru" className="underline hover:text-blue-500">admin@agrosakhalin.ru</a></p>
+        <p className="mb-4">Отдел кадров - <a href="mailto:ok@agrosakhalin.ru" className="underline hover:text-blue-500">ok@agrosakhalin.ru</a></p>
+        <p className="mb-4">Хотите работать у нас? <a href="https://yuzhno-sakhalinsk.hh.ru/employer/5844507" className="underline text-blue-400 hover:text-blue-500 font-semibold">Нажмите сюда hh.ru</a></p>
+     </div>
     </div>
   )
 }
