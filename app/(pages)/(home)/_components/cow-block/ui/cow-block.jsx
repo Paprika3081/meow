@@ -28,11 +28,12 @@ const CowBlock = () => {
             Качественно
           </span>
         </h1>
-        <p className="weight-normal indent-8  text-left text-sm text-amber-950 md:text-left md:text-[19px]">
+        <p className="weight-normal indent-8 text-sm text-amber-950 md:text-left md:text-[19px] text-center sm:text-left mb-5 sm:mb-0">
           Будь то, мясомолочная продукция, овощи, выпечка, полуфабрикаты. Совхоз
-          "Южно-Сахалинский" - уделяет особое внимание качеству в производстве
+         "Южно-Сахалинский" - уделяет особое внимание качеству в производстве
           всеми любимой фирменной продукции.
         </p>
+
       </div>
     </section>
   );

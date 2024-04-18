@@ -8,7 +8,7 @@ import ReactPlayer from 'react-player'
 const HistoryText = () => {
   return (
     <>
-    <div className="flex w-[1000px] flex-col items-center indent-8 justify-center text-justify ">
+    <div className="flex flex-col items-center indent-8 justify-center text-justify p-5 sm:w-[800px]">
           <h5>
             История молочно-овощеводческого совхоза «Южно-Сахалинский» берёт
             своё начало 25 марта 1948 года с освоения территорий Анивского
@@ -29,9 +29,9 @@ const HistoryText = () => {
             погодных условиях острова Сахалин.
           </p>
           <div>
-            <div className={"flex items-center justify-center"}>
-              <Image src="/h1.jpg" alt="photo" width={550} height={450} />
-            </div>
+          <div className={"flex items-center p-5 justify-center"}>
+            <Image src="/h1.jpg" alt="photo" width={550} height={450} className="max-w-full h-auto" />
+          </div>
           </div>
           <p>
             Предприятие стало застраиваться, наращивать свои производственные и
@@ -70,10 +70,10 @@ const HistoryText = () => {
             получал высокие награды, выполняя поставленные плановые задачи.
           </p>
           <div>
-            <div className={"flex justify-center gap-11"}>
-              <Image src="/h2.jpg" alt="photo" width={550} height={450} />
-              <Image src="/h3.jpg" alt="photo" width={550} height={450} />
-            </div>
+          <div className={"flex flex-col items-center justify-center p-5 gap-11 sm:flex-row"}>
+            <Image src="/h2.jpg" alt="photo" width={550} height={450}  />
+            <Image src="/h3.jpg" alt="photo" width={550} height={450}  />  
+          </div>
           </div>
           <p>
             В 1991 совхоз переименовали в коллективное сельскохозяйственное
@@ -88,9 +88,9 @@ const HistoryText = () => {
             и по сей день.
           </p>
           <div>
-            <div className={"flex justify-center gap-11"}>
-              <Image src="/h4.jpg" alt="photo" width={550} height={450} />
-              <Image src="/h5.jpg" alt="photo" width={550} height={450} />
+            <div className={"flex flex-col items-center justify-center p-5 gap-11 sm:flex-row"}>
+              <Image src="/h4.jpg" alt="photo" width={550} height={450}  />
+              <Image src="/h5.jpg" alt="photo" width={550} height={450}  />
             </div>
           </div>
           <p>
@@ -110,7 +110,7 @@ const HistoryText = () => {
             крупных производителей картофеля в России.
           </p>
           <div>
-            <div className={"flex justify-center gap-11"}>
+            <div className={"flex flex-col items-center justify-center p-5 gap-11 sm:flex-row"}>
               <Image src="/h6.jpg" alt="photo" width={550} height={450} />
               <Image src="/tractor.jpg" alt="photo" width={550} height={450} />
             </div>
@@ -134,7 +134,7 @@ const HistoryText = () => {
             картофеля на освоенных 25 гектарах, произрастают кормовые культуры,
             однолетние и многолетние травы для кормления поголовья.
           </p>
-          <div className={"flex justify-center gap-11"}>
+          <div className={"flex justify-center p-5 gap-11"}>
             <Image src="/cow_small.jpg" alt="photo" width={550} height={450} />
           </div>
           <p>
