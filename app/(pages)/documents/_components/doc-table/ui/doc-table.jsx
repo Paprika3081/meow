@@ -1,7 +1,7 @@
-'use client'
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'; // Подключаем Axios
-import { Yeseva_One } from "next/font/google"
+import { Lobster, Yeseva_One } from "next/font/google"
 
 const Yeseva = Yeseva_One({ weight: ["400"], subsets: ["cyrillic", "latin"] })
 
@@ -52,7 +52,7 @@ const DocTable = () => {
                     <td className="px-2 sm:px-4 py-1 sm:py-2">{item.valid}</td>
                     <td className="px-2 sm:px-4 py-1 sm:py-2">
                         {/* Вместо ссылки на PDF, можно использовать URL, предоставленный в данных */}
-                        <a href={item.link} download className={`text-black hover:text-red-700 ${window.innerWidth < 640 ? 'underline' : ''}`}>
+                        <a href={item.link} download className="text-black hover:text-red-700 ">
                             Скачать PDF
                         </a>
                     </td>
@@ -72,14 +72,14 @@ const DocTable = () => {
         <tbody>
             <tr className="bg-[#fffcf6]">
                 <td className="px-4 py-2">
-                    <a href="/Dogovor_prodazhi_produktsii.docx" download className={`text-black sm:text-base md:text-base lg:text-lg xl:text-lg hover:text-red-700 ${window.innerWidth < 640 ? 'underline' : ''}`}>
+                    <a href="/Dogovor_prodazhi_produktsii.docx" download className="text-black sm:text-base md:text-base lg:text-lg xl:text-lg hover:text-red-700 ">
                         Договор продажи продукции собственного производства
                     </a>
                 </td>
             </tr>
             <tr className="bg-[#f8f2e5]">
                 <td className="px-4 py-2">
-                    <a href="/details.pdf" download className={`text-black sm:text-base md:text-base lg:text-lg xl:text-lg hover:text-red-700 ${window.innerWidth < 640 ? 'underline' : ''}`}>
+                    <a href="/details.pdf" download className="text-black sm:text-base md:text-base lg:text-lg xl:text-lg hover:text-red-700 ">
                         Реквизиты АО "Совхоз Южно-Сахалинский"
                     </a>
                 </td>
