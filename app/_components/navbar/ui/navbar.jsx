@@ -49,7 +49,7 @@ const Navbar = () => {
         />
         <div
           className={
-            "absolute top-6  border flex flex-col bg-white text-center shadow-md"
+            "absolute top-6  border flex flex-col bg-[#ece3d8] text-center shadow-md"
           }
           style={{ fontSize: showMenu ? "9px" : "inherit"}} // Устанавливаем размер шрифта 12px при открытом меню
         >
