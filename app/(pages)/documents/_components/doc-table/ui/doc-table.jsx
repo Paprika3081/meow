@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'; // Подключаем Axios
 import { Lobster, Yeseva_One } from "next/font/google"
@@ -87,7 +88,7 @@ const DocTable = () => {
     </table>
 </div>
 </div>
-  );
+ );
 };
 
 export default DocTable;
