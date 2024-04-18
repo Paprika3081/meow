@@ -1,5 +1,5 @@
-import DocTable from "./_components/doc-table"
-import DocTextTitle from "./_components/doc-text-title"
+import DocTable from "./_components/ui/doc-table"
+import DocTextTitle from "./_components/ui/doc-text-title"
 
 const DocumentsPage = () => {
   return (

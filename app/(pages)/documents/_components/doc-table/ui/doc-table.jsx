@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'; // Подключаем Axios
-import { Lobster, Yeseva_One } from "next/font/google"
+import { Yeseva_One } from "next/font/google"
 
 const Yeseva = Yeseva_One({ weight: ["400"], subsets: ["cyrillic", "latin"] })
 

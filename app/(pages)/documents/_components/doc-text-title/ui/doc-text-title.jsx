@@ -1,5 +1,4 @@
 import { Lobster, Yeseva_One } from "next/font/google"
-
 import React from 'react';
 
 const lobster = Lobster({ weight: ["400"], subsets: ["cyrillic", "latin"] })
