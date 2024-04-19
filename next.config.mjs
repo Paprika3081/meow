@@ -1,6 +1,6 @@
-/** @type {import('next').NextConfig} */
+// next.config.mjs
 const nextConfig = {
-  // distDir: 'out' // Закомментируйте или удалите эту строку, чтобы использовать стандартную папку .next
+  distDir: 'build'
 };
 
 export default nextConfig;
