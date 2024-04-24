@@ -363,6 +363,16 @@
   resolved "https://registry.npmjs.org/@floating-ui/utils/-/utils-0.2.1.tgz"
   integrity sha512-9TANp6GPoMtYzQdt54kfAyMmz1+osLlXdg2ENroU7zzrtflTLrrC/lgrIfaSe+Wu0b89GKccT7vxXA0MoAIO+Q==
 
+"@fontsource/lobster@^5.0.20":
+  version "5.0.20"
+  resolved "https://registry.npmjs.org/@fontsource/lobster/-/lobster-5.0.20.tgz"
+  integrity sha512-Dr543aD3FpUfFYIMD83xXZJpgxVg9Ig4q9iX+A9ZXY5SplbxHBie4xIo/fCFGBYXul2A9FGKF20QnZGjJ8QtdQ==
+
+"@fontsource/yeseva-one@^5.0.20":
+  version "5.0.20"
+  resolved "https://registry.npmjs.org/@fontsource/yeseva-one/-/yeseva-one-5.0.20.tgz"
+  integrity sha512-jC2wa/8gdTqyG0W7wCn/Nrp9nUcAlyomtpJ7mwNFhgbKmnt9fCbi/8dnBdclAy6RIHw8tdqehe2VExi2hOZ9qA==
+
 "@googlemaps/js-api-loader@^1.13.8":
   version "1.16.6"
   resolved "https://registry.npmjs.org/@googlemaps/js-api-loader/-/js-api-loader-1.16.6.tgz"
