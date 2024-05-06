@@ -1,4 +1,3 @@
-const { createServer } = require('http');
 const { parse } = require('url');
 const next = require('next');
 const express = require('express');
@@ -9,17 +8,15 @@ dotenv.config();
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
-
 const server = express();
 
 app.prepare().then(() => {
-
   server.get('*', (req, res) => {
     const parsedUrl = parse(req.url, true);
     handle(req, res, parsedUrl);
   });
 
-  const PORT = process.env.PORT || 3000;
+  const PORT = process.env.PORT || 8080;
   server.listen(PORT, (err) => {
     if (err) throw err;
     console.log(`> Ready on http://localhost:${PORT}`);
