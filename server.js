@@ -1,5 +1,5 @@
 const { parse } = require('url');
-const next = require('next');
+const next = require('next/dist/server/next'); // Изменено здесь
 const express = require('express');
 const dotenv = require('dotenv');
 
