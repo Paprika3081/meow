@@ -1,5 +1,5 @@
 const { parse } = require('url');
-const next = require('next/dist/server/next'); // Изменено здесь
+const next = require('next');
 const express = require('express');
 const dotenv = require('dotenv');
 
@@ -7,7 +7,7 @@ dotenv.config();
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
-const handle = app.getRequestHandler();
+const handle = app.getRequestHandler(); 
 const server = express();
 
 app.prepare().then(() => {
@@ -16,7 +16,7 @@ app.prepare().then(() => {
     handle(req, res, parsedUrl);
   });
 
-  const PORT = process.env.PORT || 8080;
+  const PORT = process.env.PORT || 3000; // Используем порт 3000
   server.listen(PORT, (err) => {
     if (err) throw err;
     console.log(`> Ready on http://localhost:${PORT}`);
