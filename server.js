@@ -16,9 +16,10 @@ app.prepare().then(() => {
     handle(req, res, parsedUrl);
   });
 
-  const PORT = process.env.PORT || 3000; // Используем порт 3000
-  server.listen(PORT, (err) => {
+  const PORT = process.env.PORT || 3000;
+  const HOST = '0.0.0.0'; // Добавьте эту строку
+  server.listen(PORT, HOST, (err) => {
     if (err) throw err;
-    console.log(`> Ready on http://localhost:${PORT}`);
+    console.log(`> Ready on http://${HOST}:${PORT}`);
   });
 });
