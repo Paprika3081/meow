@@ -17,7 +17,7 @@ app.prepare().then(() => {
   });
 
   const PORT = process.env.PORT || 3000;
-  const HOST = '0.0.0.0'; // Добавьте эту строку
+  const HOST = 'localhost';
   server.listen(PORT, HOST, (err) => {
     if (err) throw err;
     console.log(`> Ready on http://${HOST}:${PORT}`);
