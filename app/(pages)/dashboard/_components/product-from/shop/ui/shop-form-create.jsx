@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { cities } from "./cities";
 
-const StoreFormCreate = ({ onClose }) => {
+const ShopFormCreate = ({ onClose }) => {
   const [formData, setFormData] = useState({
     title: "",
     city: "",
@@ -78,4 +78,4 @@ const StoreFormCreate = ({ onClose }) => {
   );
 };
 
-export default StoreFormCreate;
+export default ShopFormCreate;

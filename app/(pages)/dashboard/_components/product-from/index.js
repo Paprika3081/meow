@@ -1,1 +1,0 @@
-export { ProductForm } from './ui/product/ui/product-form-create'

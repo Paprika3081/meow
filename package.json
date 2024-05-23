@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node server.js",
+    "dev": "next dev",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
     "lint": "next lint",
@@ -32,6 +32,7 @@
     "react-icons": "^5.0.1",
     "react-map-gl": "^7.1.7",
     "react-player": "^2.15.1",
+    "react-router-dom": "^6.23.1",
     "react-select": "^5.8.0",
     "route-manifest": "^1.0.0",
     "save": "^2.9.0",

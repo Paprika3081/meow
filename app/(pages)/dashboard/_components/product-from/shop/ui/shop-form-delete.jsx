@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const StoreFormDelete = ({ onClose }) => {
+const ShopFormDelete = ({ onClose }) => {
   const [shops, setShops] = useState([]);
   const [selectedShop, setSelectedShop] = useState("");
 
@@ -60,4 +60,4 @@ const StoreFormDelete = ({ onClose }) => {
   );
 };
 
-export default StoreFormDelete;
+export default ShopFormDelete;

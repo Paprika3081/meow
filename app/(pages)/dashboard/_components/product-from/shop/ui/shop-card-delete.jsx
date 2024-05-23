@@ -1,8 +1,8 @@
-// StoreDeletionCard.js
-import React, { useState } from "react";
-import StoreFormDelete from "./shop-form-delete";
 
-const StoreDeletionCard = () => {
+import React, { useState } from "react";
+import ShopFormDelete from "./shop-form-delete";
+
+const ShopDeletionCard = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -19,9 +19,9 @@ const StoreDeletionCard = () => {
         <h2 className="text-xl font-semibold mb-4">Удалить магазин</h2>
         <p>Нажмите на карточку, чтобы удалить магазин</p>
       </div>
-      {isModalOpen && <StoreFormDelete onClose={closeModal} />}
+      {isModalOpen && <ShopFormDelete onClose={closeModal} />}
     </div>
   );
 };
 
-export default StoreDeletionCard;
+export default ShopDeletionCard;
