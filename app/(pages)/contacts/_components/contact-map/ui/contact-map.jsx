@@ -8,9 +8,11 @@ const ContactMap = () => {
         width="100%"
         height="480"
         title="Google Map"
-        allowFullScreen=""
+        allowFullScreen
+        loading="lazy"
         aria-hidden="false"
         tabIndex="0"
+        style={{ border: 0 }}
       ></iframe>
     </div>
   );
