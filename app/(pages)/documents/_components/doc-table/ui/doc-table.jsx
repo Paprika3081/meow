@@ -84,7 +84,7 @@ const DocTable = () => {
             <tr className="bg-[#f8f2e5]">
               <td className="px-4 py-2">
                 <a href="/details.pdf" download className={`text-black sm:text-base md:text-base lg:text-lg xl:text-lg hover:text-red-700 `}>
-                  Реквизиты АО "Совхоз Южно-Сахалинский"
+                  Реквизиты АО «Совхоз Южно-Сахалинский»
                 </a>
               </td>
             </tr>

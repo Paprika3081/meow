@@ -41,7 +41,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="flex flex-col gap-2 cursor-pointer">
-          <p className="text-xs">© <span className="text-xs">АО Совхоз Южно-Сахалинский</span></p>
+          <p className="text-xs">© <span className="text-xs">АО «Совхоз Южно-Сахалинский»</span></p>
           <p className="text-xs">© <span className="text-xs">2024 Сайт создан - <a href="https://github.com/Paprika3081" className="text-blue-300 hover:text-blue-500">"3081"</a></span></p>
         </div>
         

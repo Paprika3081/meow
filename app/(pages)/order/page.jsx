@@ -1,5 +1,6 @@
 import React from 'react';
 import { Lobster, Yeseva_One } from "next/font/google"
+import CustomHead from '@/app/_components/head_head/ui/CustomHead';
 
 const lobster = Lobster({ weight: ["400"], subsets: ["cyrillic", "latin"] })
 const Yeseva = Yeseva_One({ weight: ["400"], subsets: ["cyrillic", "latin"] })
@@ -7,6 +8,7 @@ const Yeseva = Yeseva_One({ weight: ["400"], subsets: ["cyrillic", "latin"] })
 const CustomersPage = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <CustomHead title="АО Совхоз Южно-Сахалинский" showMenu={false} />
       <div className="max-w-3xl mx-auto p-8 bg-white rounded-lg shadow-md text-center">
         <h1 className={`text-4xl font-bold mb-8 text-amber-950 ${lobster.className}`}>Уважаемые клиенты!</h1>
         <h2 className={`text-3xl font-semibold mb-6 text-gray-400 ${Yeseva.className}`}>Добро пожаловать в Совхоз Южно-Сахалинский</h2>

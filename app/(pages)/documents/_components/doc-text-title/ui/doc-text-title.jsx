@@ -8,7 +8,7 @@ const DocTextTitle = () => {
   return (
     <div className="container mx-auto px-4 py-8 md:px-8 lg:px-16">
       <div className="text-center">
-        <h3 className={` text-lg md:text-xl lg:text-2xl font-semibold ${Yeseva.className} text-gray-400 `}>Документы</h3>
+        <h3 className={`text-xl md:text-2xl lg:text-3xl font-semibold ${Yeseva.className} text-gray-400`}>Документы</h3>
         <h1 className={` text-3xl md:text-4xl lg:text-5xl font-bold ${lobster.className} text-amber-950 `}>О качестве продукции</h1>
       </div>
       <div className="mt-8">
