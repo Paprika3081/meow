@@ -36,6 +36,7 @@ yarn-error.log*
 
 # Игнорировать локальные .env файлы
 .env*.local
+.env
 
 # Игнорировать директорию Vercel
 .vercel
