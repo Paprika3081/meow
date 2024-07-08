@@ -4,7 +4,6 @@ import { Yeseva_One } from "next/font/google"
 
 const Yeseva = Yeseva_One({weight: ["400"], subsets: ["cyrillic", "latin"]})
 
-
 function VacancyList() {
   const [vacancies, setVacancies] = useState([]);
 
@@ -32,11 +31,14 @@ function VacancyList() {
         {vacancies.map(vacancy => (
           <VacancyCard
             key={vacancy.id}
+            id={vacancy.id}
             name={vacancy.name}
             salary={vacancy.salary}
             experience={vacancy.experience}
             busyness={vacancy.busyness}
-            description={vacancy.description}
+            responsibilities={vacancy.responsibilities} // Добавлены дополнительные поля
+            requirements={vacancy.requirements}       // Добавлены дополнительные поля
+            conditions={vacancy.conditions}           // Добавлены дополнительные поля
           />
         ))}
       </div>

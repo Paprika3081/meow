@@ -8,7 +8,7 @@ import ReactPlayer from 'react-player'
 const HistoryText = () => {
   return (
     <>
-    <div className="flex flex-col items-center indent-8 justify-center text-justify p-5 sm:w-[800px]">
+    <div className="flex flex-col items-center indent-8 bg-white bg-opacity-80 justify-center text-justify p-5 sm:w-[800px]">
           <h5>
             История молочно-овощеводческого совхоза «Южно-Сахалинский» берёт
             своё начало 25 марта 1948 года с освоения территорий Анивского
@@ -29,7 +29,7 @@ const HistoryText = () => {
             погодных условиях острова Сахалин.
           </p>
           <div>
-          <div className={"flex items-center p-5 justify-center"}>
+          <div className={"flex items-center p-5 justify-center bg-white bg-opacity-50"}>
             <Image src="/h1.jpg" alt="photo" width={550} height={450} className="max-w-full h-auto" />
           </div>
           </div>
@@ -70,10 +70,15 @@ const HistoryText = () => {
             получал высокие награды, выполняя поставленные плановые задачи.
           </p>
           <div>
-          <div className={"flex flex-col items-center justify-center p-5 gap-11 sm:flex-row"}>
-            <Image src="/h2.jpg" alt="photo" width={550} height={450}  />
-            <Image src="/h3.jpg" alt="photo" width={550} height={450}  />  
+          <div className="flex flex-col items-center justify-center p-5 gap-11 sm:flex-row">
+             <div className="border-[6px] border-white">
+                <Image src="/h2.jpg" alt="photo" width={550} height={450} />
+             </div>
+             <div className="border-[6px] border-white">
+                <Image src="/h3.jpg" alt="photo" width={550} height={450} />
+             </div>
           </div>
+
           </div>
           <p>
             В 1991 совхоз переименовали в коллективное сельскохозяйственное
@@ -89,8 +94,13 @@ const HistoryText = () => {
           </p>
           <div>
             <div className={"flex flex-col items-center justify-center p-5 gap-11 sm:flex-row"}>
-              <Image src="/h4.jpg" alt="photo" width={550} height={450}  />
-              <Image src="/h5.jpg" alt="photo" width={550} height={450}  />
+              <div className="border-[6px] border-white">
+                <Image src="/h4.jpg" alt="photo" width={550} height={450}  />
+              </div>
+              <div className="border-[6px] border-white">
+                <Image src="/h5.jpg" alt="photo" width={550} height={450}  />
+              </div>
+              
             </div>
           </div>
           <p>
@@ -111,8 +121,12 @@ const HistoryText = () => {
           </p>
           <div>
             <div className={"flex flex-col items-center justify-center p-5 gap-11 sm:flex-row"}>
-              <Image src="/h6.jpg" alt="photo" width={550} height={450} />
-              <Image src="/tractor.jpg" alt="photo" width={550} height={450} />
+              <div className="border-[6px] border-white">
+               <Image src="/h6.jpg" alt="photo" width={550} height={450} />
+              </div>
+              <div className="border-[6px] border-white">
+               <Image src="/tractor.jpg" alt="photo" width={550} height={450} />
+              </div>
             </div>
           </div>
           <p>
@@ -134,8 +148,10 @@ const HistoryText = () => {
             картофеля на освоенных 25 гектарах, произрастают кормовые культуры,
             однолетние и многолетние травы для кормления поголовья.
           </p>
-          <div className={"flex justify-center p-5 gap-11"}>
-            <Image src="/cow_small.jpg" alt="photo" width={550} height={450} />
+          <div className="flex justify-center p-5 gap-11">
+            <div className="border-[6px] border-white">
+              <Image src="/cow_small.jpg" alt="photo" width={550} height={450} />
+            </div>
           </div>
           <p>
             Южные пашни пышут разнообразием овощей: 12 сортов капусты в том

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function VacancyCard({ name, salary, experience, busyness, description }) {
+function VacancyCard({ name, salary, experience, busyness, responsibilities, requirements, conditions }) {
   const [showModal, setShowModal] = useState(false);
 
   const toggleModal = () => {
@@ -26,9 +26,9 @@ function VacancyCard({ name, salary, experience, busyness, description }) {
         className="bg-white rounded-lg shadow-md p-6 cursor-pointer"
         onClick={toggleModal}
       >
-        <h2 className="text-xl font-semibold mb-2">{name}</h2>
+        <h2 className="text-xl font-semibold mb-2">{name.replace(/^\d+\s-\s/, '')}</h2>
         <p className="text-gray-600">
-          Зарплата: {salary} | Опыт работы: {experience} | График работы: {busyness}
+          <strong>Зарплата:</strong> {salary} | <strong>Опыт работы:</strong> {experience} | <strong>График работы:</strong> {busyness}
         </p>
       </div>
       {showModal && (
@@ -39,11 +39,15 @@ function VacancyCard({ name, salary, experience, busyness, description }) {
             absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
             style={{ maxWidth: '1300px', maxHeight: '600px' }}>
             <div className="overflow-auto">
-              <h2 className="text-xl font-semibold mb-2">{name}</h2>
-              <p className="text-gray-600 mb-2">Зарплата: {salary}</p>
-              <p className="text-gray-600 mb-2">Опыт работы: {experience}</p>
-              <p className="text-gray-600 mb-2">График работы: {busyness}</p>
-              <p className="text-gray-600 mb-2">{description}</p>
+              <h2 className="text-xl font-semibold mb-2">{name.replace(/^\d+\s-\s/, '')}</h2>
+              <p className="text-gray-600 mb-2"><strong>Зарплата:</strong> {salary}</p>
+              <p className="text-gray-600 mb-2"><strong>Опыт работы:</strong> {experience}</p>
+              <p className="text-gray-600 mb-2"><strong>График работы:</strong> {busyness}</p>
+              <div className="text-gray-600 mb-2">
+                <p>{responsibilities && <><strong>Обязанности:</strong> {responsibilities}</>}</p>
+                <p>{requirements && <><strong>Требования:</strong> {requirements}</>}</p>
+                <p>{conditions && <><strong>Условия:</strong> {conditions}</>}</p>
+              </div>
             </div>
             <div className="flex justify-end">
               <button onClick={toggleModal} className="rounded-md bg-[#57534E] text-lg text-white p-2 mr-2 mb-2 duration-150 hover:bg-[#ECE3D8] hover:text-black hover:shadow-md hover:transition-all">

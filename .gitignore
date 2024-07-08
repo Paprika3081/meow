@@ -1,40 +1,45 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Игнорировать все файлы в корне, кроме файла .env
+/*
+!.gitignore
+!.env
 
-# dependencies
+# Игнорировать все файлы в директории .git, кроме файла .env
+/.git/*
+!.gitignore
+!.gitattributes
+!.env
+
+# Игнорировать зависимости, такие как node_modules
 /node_modules
 /.pnp
 .pnp.js
 .yarn/install-state.gz
 
-# testing
+# Игнорировать результаты тестирования
 /coverage
 
-# next.js
+# Игнорировать директории сборки Next.js
 /.next/
 /out/
 
-# production
+# Игнорировать директории сборки продакшн
 /build
 
-# misc
+# Игнорировать различные вспомогательные файлы
 .DS_Store
 *.pem
 
-# debug
+# Игнорировать отладочные логи npm и yarn
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# local env files
+# Игнорировать локальные .env файлы
 .env*.local
 
-# vercel
+# Игнорировать директорию Vercel
 .vercel
 
-# typescript
+# Игнорировать TypeScript информацию о сборке и декларации
 *.tsbuildinfo
 next-env.d.ts
-
-# Environment variables
-**/.env*
-!.env

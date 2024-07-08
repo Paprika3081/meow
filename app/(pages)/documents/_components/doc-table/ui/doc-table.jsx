@@ -8,6 +8,7 @@ const Yeseva = Yeseva_One({ weight: ["400"], subsets: ["cyrillic", "latin"] })
 const DocTable = () => {
   // Состояние для хранения данных
   const [data, setData] = useState([]);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   // Эффект для выполнения HTTP-запроса при загрузке компонента
   useEffect(() => {
@@ -15,7 +16,6 @@ const DocTable = () => {
       try {
         // Выполняем GET-запрос к ресурсу
         const response = await axios.get('https://a4ddb814deba66b5.mokky.dev/documents');
-
         // Обновляем состояние данными из ответа
         setData(response.data);
       } catch (error) {
@@ -24,11 +24,23 @@ const DocTable = () => {
     };
 
     fetchData(); // Вызываем функцию получения данных
-  }, []);
 
-  if (typeof window !== 'undefined') {
-    // Ваш код, использующий window
-  }
+    // Проверка размера окна и обновление состояния
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 640);
+    };
+
+    // Добавляем слушатель изменения размера окна
+    window.addEventListener('resize', handleResize);
+
+    // Выполняем проверку при монтировании компонента
+    handleResize();
+
+    // Убираем слушатель при размонтировании компонента
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <div className="container mx-auto px-4 py-8 md:px-8 lg:px-16">
@@ -76,7 +88,7 @@ const DocTable = () => {
           <tbody>
             <tr className="bg-[#fffcf6]">
               <td className="px-4 py-2">
-                <a href="/Dogovor_prodazhi_produktsii.docx" download className={`text-black sm:text-base md:text-base lg:text-lg xl:text-lg hover:text-red-700 ${typeof window !== 'undefined' && window.innerWidth < 640 ? 'underline' : ''}`}>
+                <a href="/Dogovor_prodazhi_produktsii.docx" download className={`text-black sm:text-base md:text-base lg:text-lg xl:text-lg hover:text-red-700 ${isSmallScreen ? 'underline' : ''}`}>
                   Договор продажи продукции собственного производства
                 </a>
               </td>

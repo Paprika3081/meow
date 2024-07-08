@@ -13,7 +13,6 @@ export default function RootLayout({ children }) {
     <html lang="ru">
       <body className={font.className}>
         <Navbar />
-        <Advertisement />
         <main>{children}</main>
         <ToTopButton className="fixed bottom-10 right-10 w-[50px] h-[50px] text-[#ada295] cursor-pointer" />
         <Footer />

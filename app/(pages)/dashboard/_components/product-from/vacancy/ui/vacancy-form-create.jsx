@@ -1,4 +1,3 @@
-// VacancyFormCreate.js
 import React, { useState } from "react";
 
 const VacancyFormCreate = ({ onClose }) => {
@@ -7,7 +6,9 @@ const VacancyFormCreate = ({ onClose }) => {
     salary: "",
     experience: "",
     busyness: [],
-    description: ""
+    responsibilities: "",
+    requirements: "",
+    conditions: ""
   });
   const [isOpen, setIsOpen] = useState(true);
 
@@ -27,7 +28,7 @@ const VacancyFormCreate = ({ onClose }) => {
       const busynessString = formData.busyness.join(", ");
       const formDataToSend = {
         ...formData,
-        busyness: busynessString
+        busyness: busynessString,
       };
 
       const response = await fetch('https://a4ddb814deba66b5.mokky.dev/vacancy', {
@@ -74,11 +75,11 @@ const VacancyFormCreate = ({ onClose }) => {
                       <form onSubmit={handleSubmit}>
                         <div className="mb-4">
                           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">Название:</label>
-                          <input type="text" name="name" value={formData.name} onChange={handleChange} maxLength={50} required className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                          <input type="text" name="name" value={formData.name} onChange={handleChange} required maxLength="350" className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
                         </div>
                         <div className="mb-4">
                           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="salary">Зарплата:</label>
-                          <input type="text" name="salary" value={formData.salary} onChange={handleChange} required className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                          <input type="text" name="salary" value={formData.salary} onChange={handleChange} required maxLength="150" className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
                         </div>
                         <div className="mb-4">
                           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="experience">Опыт работы:</label>
@@ -86,15 +87,23 @@ const VacancyFormCreate = ({ onClose }) => {
                         </div>
                         <div className="mb-4">
                           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="busyness">Занятость:</label>
-                          <div>
+                          <div className="gap-6">
                             <input type="checkbox" name="busyness" value="Полная занятость, полный день" onChange={handleChange} /> Полная занятость, полный день
                             <input type="checkbox" name="busyness" value="Частичная занятость" onChange={handleChange} /> Частичная занятость
                             <input type="checkbox" name="busyness" value="Удаленная работа" onChange={handleChange} /> Удаленная работа
                           </div>
                         </div>
                         <div className="mb-4">
-                          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="description">Описание:</label>
-                          <textarea name="description" value={formData.description} onChange={handleChange} maxLength={500} required className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="responsibilities">Обязанности:</label>
+                          <textarea name="responsibilities" value={formData.responsibilities} onChange={handleChange} required maxLength="1000" className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                        </div>
+                        <div className="mb-4">
+                          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="requirements">Требования:</label>
+                          <textarea name="requirements" value={formData.requirements} onChange={handleChange} required maxLength="1000" className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                        </div>
+                        <div className="mb-4">
+                          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="conditions">Условия:</label>
+                          <textarea name="conditions" value={formData.conditions} onChange={handleChange} required maxLength="1000" className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
                         </div>
                         <div className="flex justify-between">
                           <button type="button" onClick={handleClose} className="block px-4 py-2 text-gray-700 bg-gray-300 rounded hover:bg-gray-400 focus:outline-none focus:bg-gray-400">Отмена</button>
