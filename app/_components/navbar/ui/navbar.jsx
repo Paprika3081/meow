@@ -36,7 +36,7 @@ const Navbar = () => {
           alt={"cowcow"}
           width={150}
           height={60}
-        />
+        />  
       </Link>
       <ul className={"hidden md:flex md:gap-5"}>
         <NavbarItems pathname={pathname} />
