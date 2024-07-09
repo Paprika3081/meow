@@ -18,7 +18,7 @@ const SustainableFarmBlock = () => {
         <div className="relative rounded-lg overflow-hidden">
           <div className="w-full h-full">
             <Image
-              src="/cow-grid.png"
+              src="/about.png"
               alt="Изображение с коровой"
               quality={100}
               width={500}
@@ -72,7 +72,7 @@ const SustainableFarmBlock = () => {
         </article>
         <div className="relative rounded-lg overflow-hidden">
           <Image
-            src="/about.png"
+            src="/cow-grid.png"
             alt="Изображение с морковью"
             quality={100}
             width={300}
