@@ -37,6 +37,7 @@
     "react-select": "^5.8.0",
     "route-manifest": "^1.0.0",
     "save": "^2.9.0",
+    "sharp": "^0.33.4",
     "swiper": "^11.0.7",
     "uuid": "^9.0.1",
     "yarn": "^1.22.22"

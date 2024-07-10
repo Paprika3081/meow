@@ -11,7 +11,7 @@ const HistoryPage = () => {
       <div
         className="flex flex-col items-center justify-center"
         style={{
-          backgroundImage: 'url("/background-vegetables.png")',
+          backgroundImage: 'url("/background-vegetables123.png")',
           backgroundSize: "auto", // или размер, который вам нужен
           backgroundRepeat: "repeat", // повторение изображения
           minHeight: "100vh",
