@@ -150,7 +150,7 @@ const HistoryText = () => {
           </p>
           <div className="flex justify-center p-5 gap-11">
             <div className="border-[6px] border-white">
-              <Image src="/cow_small.jpg" alt="photo" width={550} height={450} />
+              <Image src="/cow_brown.jpg" alt="photo" width={550} height={450} />
             </div>
           </div>
           <p>
