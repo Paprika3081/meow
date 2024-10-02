@@ -20,7 +20,12 @@ export const Product = ({ id, title, image, description }) => {
 
       <Button onClick={handleOpenModal}>Подробнее</Button>
       {showModal && (
-        <CatalogModal handleCloseModal={handleCloseModal} image={image} title={title} description={description} />
+        <CatalogModal
+          handleCloseModal={handleCloseModal}
+          image={image} // Передаем обычную ссылку на изображение
+          title={title}
+          description={description}
+        />
       )}
     </div>
   );

@@ -1,10 +1,10 @@
-'use client';
+"use client";
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CiMenuBurger } from "react-icons/ci";
-import Head from 'next/head'; // Добавлено для мета-тегов
+import Head from 'next/head';
 import { NavbarItems } from "./_components/navbar-items";
 
 const Navbar = () => {
@@ -16,48 +16,58 @@ const Navbar = () => {
   };
 
   return (
-    <nav
-      className={
-        "sticky top-0 z-10 flex h-[50px] w-full items-center justify-center bg-[#ece3d8] pl-3 pr-3 shadow-sm md:h-[80px]"
-      }
-    >
-      {/* Добавлены мета-теги для улучшения SEO */}
+    <nav className="sticky top-0 z-10 flex items-center justify-between bg-[#ece3d8] shadow-sm px-4 py-2 md:py-4 md:px-6 h-20">
       <Head>
         <title>Меню сайта - Совхоз Южно-Сахалинский</title>
         <meta name="description" content="Меню сайта компании Совхоз Южно-Сахалинский, представляющее ссылки на различные страницы и разделы сайта." />
-        {/* Другие мета-теги, такие как ключевые слова, могут быть добавлены здесь */}
       </Head>
-      <Link
-        href={"/"}
-        className="absolute left-0 hidden h-[60px] w-[150px] md:flex items-center justify-center"
-      >
-        <Image
-          src={"/logo.svg"}
-          alt={"cowcow"}
-          width={150}
-          height={60}
-        />  
-      </Link>
-      <ul className={"hidden md:flex md:gap-5"}>
-        <NavbarItems pathname={pathname} />
-      </ul>
-     
-      <div className={"relative flex justify-center"}>
+
+      {/* Логотип и соцсети для маленьких экранов */}
+      <div className="flex items-center">
+        <Link href="/" className="flex items-center m-0">
+          <Image src="/logo-new.png" alt="Логотип" width={150} height={60} />
+        </Link>
+
+        {/* Социальные сети только для маленьких экранов */}
+        <div className="flex md:hidden gap-3 ml-4 items-center justify-center">
+          <Link href="https://rutube.ru/channel/43096186" target="_blank" aria-label="Rutube" className="hover:opacity-80">
+            <Image src="/rutube.svg" alt="Rutube" width={60} height={60} /> {/* Увеличено для маленьких экранов */}
+          </Link>
+          <Link href="https://t.me/sovkhoz65" target="_blank" aria-label="Telegram" className="hover:opacity-80">
+            <Image src="/telegramm.svg" alt="Telegram" width={30} height={30} /> {/* Telegram чуть меньше Rutube */}
+          </Link>
+        </div>
+      </div>
+
+      {/* Меню для больших экранов */}
+      <div className="hidden md:flex flex-grow justify-center items-center">
+        <ul className="flex gap-6">
+          <NavbarItems pathname={pathname} />
+        </ul>
+      </div>
+
+      {/* Бургер-меню для мобильных устройств */}
+      <div className="flex items-center md:hidden relative">
         <CiMenuBurger
           onClick={handleShowMenu}
-          className={`block md:hidden ${showMenu && "rotate-90"} transition-all duration-200`}
+          className={`text-2xl transition-transform duration-300 ${showMenu ? 'rotate-90' : ''}`}
         />
-        <div
-          className={
-            "absolute top-6  flex flex-col bg-[#ece3d8] text-center shadow-md"
-          }
-          style={{ fontSize: showMenu ? "9px" : "inherit"}} // Устанавливаем размер шрифта 12px при открытом меню
-        >
-          {showMenu && <NavbarItems pathname={pathname} />}
-        </div>
-      
+        {showMenu && (
+          <div className="absolute top-full right-0 mt-2 bg-[#ece3d8] text-center shadow-lg py-2 px-4 rounded-md transition-transform duration-300 transform translate-y-0 opacity-100">
+            <NavbarItems pathname={pathname} />
+          </div>
+        )}
       </div>
-      
+
+      {/* Социальные сети для больших экранов */}
+      <div className="hidden md:flex gap-6 items-center">
+        <Link href="https://rutube.ru/channel/43096186" target="_blank" aria-label="Rutube" className="hover:opacity-80">
+          <Image src="/rutube.svg" alt="Rutube" width={60} height={60} />
+        </Link>
+        <Link href="https://t.me/sovkhoz65" target="_blank" aria-label="Telegram" className="hover:opacity-80">
+          <Image src="/telegramm.svg" alt="Telegram" width={40} height={40} />
+        </Link>
+      </div>
     </nav>
   );
 };
