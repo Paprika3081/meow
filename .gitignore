@@ -5,12 +5,6 @@
 !public/
 !public/images/
 
-# Игнорировать все файлы в директории .git, кроме указанных исключений
-/.git/*
-!.gitignore
-!.gitattributes
-!.env
-
 # Игнорировать зависимости, такие как node_modules
 /node_modules
 /.pnp
