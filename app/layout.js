@@ -4,7 +4,7 @@ import './globals.css';
 import { Navbar } from './_components/navbar';
 import { Footer } from './_components/footer/ui/footer';
 import { ToTopButton } from './_components/to-top-button/ui/to-top-button';
-import { Advertisement } from './_components/advertisement/ui/Advertisement';
+
 
 const font = Comfortaa({ subsets: ['cyrillic', 'latin'], weight: ['400'] });
 

@@ -1,6 +1,8 @@
-import { Lobster } from "next/font/google";
+import { Lobster, Yeseva_One } from "next/font/google";
+import Image from "next/image";
 
 const lobster = Lobster({ weight: ["400"], subsets: ["cyrillic", "latin"] });
+const Yeseva = Yeseva_One({ weight: ["400"], subsets: ["cyrillic", "latin"] });
 
 const VacancyTitle = () => {
   return (
@@ -38,6 +40,36 @@ const VacancyTitle = () => {
           </a>
         </p>
       </div>
+
+      {/* Новый блок с информацией по трудоустройству */}
+      <div className="flex justify-center w-full mt-6">
+        <div className="bg-white shadow-lg p-6 rounded-xl border border-gray-300 w-[1000px] h-[700px] text-center">
+          <h2 className={`text-xl text-amber-950 mb-4 ${Yeseva.className}`}>
+            НА УБОРКУ УРОЖАЯ КАПУСТЫ требуются работники!
+          </h2>
+          <p className="text-base text-gray-700 mb-4">
+            Гражданство не имеет значения.
+          </p>
+          <p className="text-base text-gray-700 mb-4">
+            За ваш труд и помощь мы готовы платить <span className="font-bold">3000 рублей в день.</span>
+          </p>
+          <p className="text-base text-gray-700 mb-4">
+            При трудоустройстве иностранным гражданам окажем помощь в оформлении документов.
+          </p>
+          <p className="text-base text-gray-700 mb-4">
+            ОСТАЛЬНЫЕ ПОДРОБНОСТИ ПО ТЕЛ:
+          </p>
+          <a href="tel:+89146407524" className="font-bold text-blue-600 hover:underline"> 8(914)640-75-24</a>
+          <Image
+            src={"/3081123.jpg"}
+            width={750} // Уменьшен размер изображения
+            height={200} // Соотношение сторон 600x400
+            alt={"АО Совхоз Южно-Сахалинский"}
+            className="object-contain mx-auto mt-4" // Уменьшено расстояние сверху
+          />
+        </div>
+      </div>
+
     </div>
   );
 };
