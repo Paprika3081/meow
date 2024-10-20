@@ -27,7 +27,7 @@ server.use((err, req, res, next) => {
 
 app.prepare().then(() => {
   const PORT = process.env.PORT || 3000;
-  const HOST = 'localhost'; // Исправлено на правильный IP-адрес
+  const HOST = '0.0.0.0'; // Исправлено на правильный IP-адрес
   server.listen(PORT, HOST, (err) => {
     if (err) throw err;
     console.log(`> Ready on http://${HOST}:${PORT}`);
