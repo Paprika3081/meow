@@ -4,7 +4,6 @@
 !.env
 !public/
 !public/images/
-
 # Игнорировать зависимости, такие как node_modules
 /node_modules
 /.pnp

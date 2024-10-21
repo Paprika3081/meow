@@ -19,11 +19,6 @@ const items = [
     path: "/catalog",
   },
   {
-    id: 4,
-    title: "НОВОСТИ",
-    path: "/news",
-  },
-  {
     id: 5,
     title: "КОНТАКТЫ",
     path: "/contacts",
